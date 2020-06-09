@@ -8,4 +8,8 @@
     <color name="backgroundMainEndColor">#60ebe4</color>
 
     <color name="getStartedTextColor">#35ccb1</color>
+
+    <color name="courseNameTextColor">#1f314a</color>
+
+    <color name="backgroundShape">#22d0c4</color>
 </resources>
