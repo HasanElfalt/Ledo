@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".JourneyActivity" android:theme="@style/NoActionBar"></activity>
-        <activity android:name=".HomeScreen" />
+        <activity
+            android:name=".HomeScreen"
+            android:theme="@style/NoActionBar"></activity>
         <activity
             android:name=".MainActivity"
             android:theme="@style/NoActionBar">
