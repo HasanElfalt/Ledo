@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundMainStartColor"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".JourneyLessonActivity">
+
+        <TextView
+            android:id="@+id/awareness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Support Systems"
+            android:textColor="@color/courseNameTextColor"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Awareness Room" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_book_shelf_lesson_finished"
+            android:id="@+id/book_shelf_lesson_finished"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@id/lesson_num"
+            app:layout_constraintEnd_toEndOf="@id/lesson_num"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lesson 1 Reference"
+            android:minWidth="150dp"
+            android:gravity="center"
+            android:background="@drawable/get_started_shape"
+            android:id="@+id/lesson_num"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:padding="4dp"
+            android:textColor="@color/courseNameTextColor"
+            app:layout_constraintTop_toBottomOf="@id/book_shelf_lesson_finished"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_checked"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/lesson_num"
+            app:layout_constraintTop_toTopOf="@id/lesson_num"
+            app:layout_constraintBottom_toBottomOf="@id/lesson_num"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/videoFrame"
+            android:layout_marginTop="16dp"
+            android:elevation="10dp"
+            app:layout_constraintTop_toBottomOf="@id/lesson_num"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/videoDetails">
+
+            <VideoView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/video"
+                />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/videoDetails"
+            app:layout_constraintTop_toBottomOf="@id/videoFrame"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@android:color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="24dp"
+                android:text="Introduction"
+                android:textColor="@color/courseNameTextColor"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:text="Introduction" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/courseNameTextColor"
+                android:textSize="24sp"
+                android:text="The first building block of emotional intelligence is self-awareness.
+                Self-awareness is our ability to recognize our own emotions and their effects on us and others.
+                Without being aware of and understanding our own emotions, it will be difficult for us to move into the other emotional competencies like self-management,
+                social awareness, or team leadership.Self-improvement is also referred to as personal-development can be said as the improvement to one’s own mind and characterthrough one’s own efforts.
+                It is a conscious process where one decides to take oneself in hand and change their life-for the better(introduction to self improvement)." />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
