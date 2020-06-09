@@ -8,7 +8,7 @@
     android:layout_marginStart="16dp"
     android:layout_marginEnd="30dp"
     android:layout_marginTop="16dp"
-    android:background="@drawable/backgroun_list_lessons"
+    android:background="@drawable/background_list_lessons"
     android:elevation="5dp"
     android:translationZ="5dp"
     >
