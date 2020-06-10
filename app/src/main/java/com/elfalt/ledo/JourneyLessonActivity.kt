@@ -21,7 +21,6 @@ class JourneyLessonActivity : AppCompatActivity() {
         video.setMediaController(medianController)
         medianController.setAnchorView(video)
 
-        video.requestFocus()
         video.start()
 
         Toast.makeText(this,"Duration is ${video.duration}, ${R.raw.americans_are_specific}",Toast.LENGTH_SHORT).show()

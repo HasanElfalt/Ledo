@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/backgroundMainStartColor"
-    >
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundMainStartColor"
         tools:context=".JourneyLessonActivity">
 
         <TextView
@@ -20,16 +15,27 @@
             android:layout_marginTop="24dp"
             android:text="Support Systems"
             android:textColor="@color/courseNameTextColor"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Awareness Room" />
+            tools:text="Support Systems" />
+
+        <com.carlosmuvi.segmentedprogressbar.SegmentedProgressBar
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:id="@+id/segmentedProgressBar"
+            app:layout_constraintStart_toStartOf="@id/awareness"
+            app:layout_constraintEnd_toEndOf="@id/awareness"
+            app:layout_constraintTop_toBottomOf="@id/awareness"
+            app:segment_count="5"
+            app:gap_size="5dp"
+            app:fill_color="@color/backgroundShape"/>
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:src="@drawable/ic_book_shelf_lesson_finished"
             android:id="@+id/book_shelf_lesson_finished"
             android:layout_marginTop="8dp"
@@ -42,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Lesson 1 Reference"
-            android:minWidth="150dp"
+            android:minWidth="140dp"
             android:gravity="center"
             android:background="@drawable/get_started_shape"
             android:id="@+id/lesson_num"
@@ -68,30 +74,37 @@
             android:layout_height="wrap_content"
             android:id="@+id/videoFrame"
             android:layout_marginTop="16dp"
-            android:elevation="10dp"
             app:layout_constraintTop_toBottomOf="@id/lesson_num"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/videoDetails">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <VideoView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/video"
                 />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:visibility="invisible"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/videoFrame"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:id="@+id/videoDetails"
-            app:layout_constraintTop_toBottomOf="@id/videoFrame"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:background="@android:color/white">
-
+            android:background="@android:color/white"
+            android:id="@+id/videoDetails">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -112,12 +125,10 @@
                 android:textColor="@color/courseNameTextColor"
                 android:textSize="24sp"
                 android:text="The first building block of emotional intelligence is self-awareness.
-                Self-awareness is our ability to recognize our own emotions and their effects on us and others.
-                Without being aware of and understanding our own emotions, it will be difficult for us to move into the other emotional competencies like self-management,
-                social awareness, or team leadership.Self-improvement is also referred to as personal-development can be said as the improvement to one’s own mind and characterthrough one’s own efforts.
-                It is a conscious process where one decides to take oneself in hand and change their life-for the better(introduction to self improvement)." />
-
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+                    Self-awareness is our ability to recognize our own emotions and their effects on us and others.
+                    Without being aware of and understanding our own emotions, it will be difficult for us to move into the other emotional competencies like self-management,
+                    social awareness, or team leadership.Self-improvement is also referred to as personal-development can be said as the improvement to one’s own mind and characterthrough one’s own efforts.
+                    It is a conscious process where one decides to take oneself in hand and change their life-for the better(introduction to self improvement)." />
+            </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
