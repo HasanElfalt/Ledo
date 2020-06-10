@@ -19,14 +19,23 @@
             android:layout_marginTop="16dp"
             android:text="Awareness Room"
             android:textColor="@color/courseNameTextColor"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Awareness Room" />
 
-
+        <com.carlosmuvi.segmentedprogressbar.SegmentedProgressBar
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:id="@+id/segmentedProgressBar"
+            app:layout_constraintStart_toStartOf="@id/awareness"
+            app:layout_constraintEnd_toEndOf="@id/awareness"
+            app:layout_constraintTop_toBottomOf="@id/awareness"
+            app:segment_count="5"
+            app:gap_size="5dp"
+            app:fill_color="@color/backgroundShape"/>
 
         <ImageView
             android:id="@+id/book_shelfImg"
@@ -36,7 +45,7 @@
             android:src="@drawable/ic_book_shelf"
             app:layout_constraintEnd_toEndOf="@id/support_system"
             app:layout_constraintStart_toStartOf="@id/support_system"
-            app:layout_constraintTop_toBottomOf="@id/awareness" />
+            app:layout_constraintTop_toBottomOf="@id/segmentedProgressBar" />
 
         <TextView
             android:id="@+id/support_system"
@@ -61,7 +70,7 @@
             android:src="@drawable/ic_info"
             app:layout_constraintEnd_toEndOf="@id/core_values"
             app:layout_constraintStart_toStartOf="@id/core_values"
-            app:layout_constraintTop_toBottomOf="@id/awareness" />
+            app:layout_constraintTop_toBottomOf="@id/segmentedProgressBar" />
 
         <TextView
             android:id="@+id/core_values"
