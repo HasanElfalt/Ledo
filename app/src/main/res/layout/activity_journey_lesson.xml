@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundMainStartColor"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".JourneyLessonActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/backgroundMainStartColor"
-        tools:context=".JourneyLessonActivity">
+        android:layout_height="0dp"
+        android:id="@+id/group1">
 
         <TextView
             android:id="@+id/awareness"
@@ -52,7 +61,7 @@
             android:gravity="center"
             android:background="@drawable/get_started_shape"
             android:id="@+id/lesson_num"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="8dp"
             android:padding="4dp"
             android:textColor="@color/courseNameTextColor"
@@ -71,40 +80,40 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/videoFrame"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
+            android:minHeight="150dp"
             app:layout_constraintTop_toBottomOf="@id/lesson_num"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
             <VideoView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/video"
                 />
+
             <ProgressBar
                 android:id="@+id/progressBar"
                 android:visibility="invisible"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
         </FrameLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/videoFrame"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        >
-
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:background="@android:color/white"
-            android:id="@+id/videoDetails">
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@id/videoFrame"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"  >
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -112,23 +121,32 @@
                 android:layout_marginStart="24dp"
                 android:text="Introduction"
                 android:textColor="@color/courseNameTextColor"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                tools:text="Introduction" />
+                tools:text="Introduction"
+                android:id="@+id/intro"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/videoFrame"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginEnd="16dp"
                 android:textColor="@color/courseNameTextColor"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:text="The first building block of emotional intelligence is self-awareness.
                     Self-awareness is our ability to recognize our own emotions and their effects on us and others.
                     Without being aware of and understanding our own emotions, it will be difficult for us to move into the other emotional competencies like self-management,
                     social awareness, or team leadership.Self-improvement is also referred to as personal-development can be said as the improvement to one’s own mind and characterthrough one’s own efforts.
-                    It is a conscious process where one decides to take oneself in hand and change their life-for the better(introduction to self improvement)." />
-            </LinearLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    It is a conscious process where one decides to take oneself in hand and change their life-for the better(introduction to self improvement)."
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/intro"
+                />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
