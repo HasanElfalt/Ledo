@@ -53,6 +53,7 @@
         android:textColor="@color/getStartedTextColor"
         android:textSize="15sp"
         android:padding="16dp"
+        android:id="@+id/getStarted"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/details"

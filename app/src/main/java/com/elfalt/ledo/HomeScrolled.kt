@@ -14,7 +14,7 @@ class HomeScrolled : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return LayoutInflater.from(container?.context).inflate(R.layout.home_scrolled,container,false)
+        return LayoutInflater.from(container?.context).inflate(R.layout.fragment_home_scrolled,container,false)
     }
 
 }
