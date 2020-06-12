@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         getStarted.setOnClickListener {
-            val intent = Intent(this, JourneyActivity :: class.java)
+            val intent = Intent(this, HomeScrolled :: class.java)
             startActivity(intent)
         }
     }

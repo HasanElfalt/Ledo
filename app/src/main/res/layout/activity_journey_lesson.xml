@@ -78,30 +78,14 @@
             app:layout_constraintTop_toTopOf="@id/lesson_num"
             app:layout_constraintBottom_toBottomOf="@id/lesson_num"/>
 
-        <FrameLayout
+        <com.google.android.youtube.player.YouTubePlayerView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:id="@+id/videoFrame"
-            android:layout_marginTop="10dp"
-            android:minHeight="150dp"
-            app:layout_constraintTop_toBottomOf="@id/lesson_num"
+            android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <VideoView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/video"
-                />
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:visibility="invisible"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </FrameLayout>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lesson_num"/>
 
         <LinearLayout
             android:layout_width="0dp"
