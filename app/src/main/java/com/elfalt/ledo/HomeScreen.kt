@@ -33,6 +33,8 @@ class HomeScreen : AppCompatActivity() {
                 }
                 R.id.graph -> {
 
+                    val leaderboard =Leaderboard.newInstance()
+                    openFragment(leaderboard)
                     return@OnNavigationItemSelectedListener true
                 }
             }
