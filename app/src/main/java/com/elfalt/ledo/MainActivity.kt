@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
 
         getStarted.setOnClickListener {
-            val intent = Intent(this, JourneyActivity :: class.java)
+            val intent = Intent(this, HomeScreen :: class.java)
             startActivity(intent)
         }
     }

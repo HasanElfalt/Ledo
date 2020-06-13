@@ -5,19 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeScreen">
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-       android:id="@+id/home_bottom_navi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="#d2fcfa"
-        app:menu="@menu/home_bottom_navi"/>
-<fragment
+
+<com.google.android.material.bottomnavigation.BottomNavigationView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/fragment"
+    android:layout_height="wrap_content"
+    android:id="@+id/btn_nav"
+    app:menu="@menu/home_bottom_navi"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:background="@color/backgroundMainStartColor"
     />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frame_layout"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

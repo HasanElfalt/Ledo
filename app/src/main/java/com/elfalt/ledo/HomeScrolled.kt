@@ -9,12 +9,9 @@ import android.view.ViewGroup
 
 class HomeScrolled : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return LayoutInflater.from(container?.context).inflate(R.layout.fragment_home_scrolled,container,false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+        inflater.inflate(R.layout.fragment_home_scrolled, container, false)
+    companion object {
+        fun newInstance(): HomeScrolled = HomeScrolled()
     }
-
 }
