@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_leaderboard.*
+import kotlinx.android.synthetic.main.fragment_leaderboard.view.*
 
 class Leaderboard : Fragment() {
 
@@ -16,8 +17,9 @@ class Leaderboard : Fragment() {
 
         val v = inflater.inflate(R.layout.fragment_leaderboard, container, false)
         val usersList: List<LeaderboardUser> = getUsersList()
-        recycler_view.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        recycler_view.adapter = LeaderboardAdapter(usersList as ArrayList<LeaderboardUser>)
+        v.recycler_view.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        v.recycler_view.adapter = LeaderboardAdapter(usersList)
+
         return v
 
 
@@ -34,6 +36,7 @@ class Leaderboard : Fragment() {
         fun newInstance(): Leaderboard = Leaderboard()
 
     }
+
     private fun getUsersList() : List<LeaderboardUser>{
 
         val leaderboardUser : MutableList<LeaderboardUser> = mutableListOf()
@@ -55,7 +58,6 @@ class Leaderboard : Fragment() {
 
         return leaderboardUser
     }
-
 
 
 

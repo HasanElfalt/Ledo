@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.leaderboard_item.view.*
 
-class LeaderboardAdapter (val userList:ArrayList<LeaderboardUser>):RecyclerView.Adapter<LeaderboardAdapter.ViewHolder>(){
+class LeaderboardAdapter (val userList:List<LeaderboardUser>):RecyclerView.Adapter<LeaderboardAdapter.ViewHolder>(){
 
 
 

@@ -16,10 +16,11 @@ class HomeScreen : AppCompatActivity() {
         setContentView(R.layout.activity_home_screen)
 
 
-
+        openFragment(HomeScrolled.newInstance())
 
         val bottomNavigation: BottomNavigationView = findViewById(R.id.btn_nav)
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
 
 
     }
@@ -31,8 +32,8 @@ class HomeScreen : AppCompatActivity() {
             when (item.itemId) {
                 R.id.home -> {
 
-                    val homeScrolled = HomeScrolled.newInstance()
-                    openFragment(homeScrolled)
+                    val home = Home.newInstance()
+                    openFragment(home)
 
                     return@OnNavigationItemSelectedListener true
                 }
@@ -49,6 +50,10 @@ class HomeScreen : AppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
 
                 }
+                R.id.profile -> {
+
+                }
+
             }
             false
         }
@@ -60,4 +65,5 @@ class HomeScreen : AppCompatActivity() {
         transaction.commit()
 
     }
+
 }
