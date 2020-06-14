@@ -3,9 +3,6 @@ package com.elfalt.ledo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.SpannableString
-import android.text.style.UnderlineSpan
-import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,11 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
-
         getStarted.setOnClickListener {
-            val intent = Intent(this, HomeScreen :: class.java)
+            val intent = Intent(this, HomeScrolled :: class.java)
             startActivity(intent)
         }
     }

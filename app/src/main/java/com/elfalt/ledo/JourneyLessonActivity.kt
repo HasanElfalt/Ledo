@@ -1,62 +1,86 @@
 package com.elfalt.ledo
 
-import android.media.MediaPlayer
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.MediaController
+import android.util.Log
 import android.widget.Toast
+import com.google.android.youtube.player.YouTubeBaseActivity
+import com.google.android.youtube.player.YouTubeInitializationResult
+import com.google.android.youtube.player.YouTubePlayer
 import kotlinx.android.synthetic.main.activity_journey_lesson.*
 
-class JourneyLessonActivity : AppCompatActivity() {
+class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener,
+    YouTubePlayer.PlaybackEventListener, YouTubePlayer.PlayerStateChangeListener  {
 
-    private var playBackPosition = 0
-    private val videoPath : String = "android.resource://com.elfalt.ledo/${R.raw.kuka}"
-    private lateinit var mediaController : MediaController
+    private val API_KEY  : String = BuildConfig.API_KEY
+    private val VIDEO_ID : String = "9YlRIvdokMg"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_journey_lesson)
 
 
-        video.setOnPreparedListener {
-            mediaController.setAnchorView(video)
-            video.setMediaController(mediaController)
+        videoFrame.initialize(API_KEY,this)
 
-            video.seekTo(playBackPosition)
-            video.start()
+    }
+
+    override fun onInitializationSuccess(p0: YouTubePlayer.Provider?, p1: YouTubePlayer?, p2: Boolean) {
+
+        p1?.setPlayerStateChangeListener(this)
+        p1?.setPlaybackEventListener(this)
+
+        if(!p2){
+            p1?.cueVideo(VIDEO_ID)
         }
-        
-        video.setOnInfoListener { _, what, _ ->
-            if(what == MediaPlayer.MEDIA_INFO_VIDEO_RENDERING_START)
-            progressBar.visibility = View.INVISIBLE
-            true
-        }
-
-        //Toast.makeText(this,"Duration is ${video.duration}, ${R.raw.kuka}",Toast.LENGTH_SHORT).show()
-
     }
 
-    override fun onStart() {
-        super.onStart()
-
-        mediaController = MediaController(this)
-        val uri = Uri.parse(videoPath)
-        video.setVideoURI(uri)
-        
-        progressBar.visibility = View.VISIBLE
+    override fun onInitializationFailure(p0: YouTubePlayer.Provider?, p1: YouTubeInitializationResult?) {
+        Toast.makeText(this,"Initializations failed", Toast.LENGTH_SHORT).show()
+        Log.e("failed", p1.toString())
     }
 
-    override fun onPause() {
-        super.onPause()
-
-        video.pause()
-        playBackPosition = video.currentPosition
+    override fun onAdStarted() {
+        //Toast.makeText(this,"Ad started", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onStop() {
-        video.stopPlayback()
-        super.onStop()
+    override fun onLoading() {
+        Toast.makeText(this,"video loading", Toast.LENGTH_SHORT).show()
     }
+
+    override fun onVideoStarted() {
+        //Toast.makeText(this,"video started", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onLoaded(p0: String?) {
+        //Toast.makeText(this,"video loaded", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onVideoEnded() {
+        //Toast.makeText(this,"video Ended", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onError(p0: YouTubePlayer.ErrorReason?) {
+        Toast.makeText(this,"Error", Toast.LENGTH_SHORT).show()
+        Log.e("error", p0.toString())
+    }
+
+    override fun onSeekTo(p0: Int) {
+        Toast.makeText(this, "Seeked to$p0", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onBuffering(p0: Boolean) {
+        Toast.makeText(this,"Buffering", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onPlaying() {
+        Toast.makeText(this,"video playing", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onStopped() {
+        //Toast.makeText(this,"video stopped", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onPaused() {
+        //Toast.makeText(this,"video paused", Toast.LENGTH_SHORT).show()
+    }
+
 }
