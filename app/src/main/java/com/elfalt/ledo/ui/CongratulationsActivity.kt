@@ -1,8 +1,8 @@
-package com.elfalt.ledo
+package com.elfalt.ledo.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import com.elfalt.ledo.R
 
 
 class CongratulationsActivity : AppCompatActivity() {

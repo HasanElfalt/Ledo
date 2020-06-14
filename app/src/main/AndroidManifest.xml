@@ -9,16 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
-        <activity android:name=".JourneyLessonActivity" > </activity>
+        <activity android:name=".ui.JourneyLessonActivity" > </activity>
         <activity
-            android:name=".JourneyActivity"
+            android:name=".ui.JourneyActivity"
             android:theme="@style/NoActionBar">
         </activity>
         <activity
-            android:name=".HomeScreen"
+            android:name=".ui.HomeScreen"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +28,7 @@
 
         </activity>
         <activity
-            android:name=".QuestionsActivity"
+            android:name=".ui.QuestionsActivity"
             android:theme="@style/NoActionBar">
             </activity>
     </application>

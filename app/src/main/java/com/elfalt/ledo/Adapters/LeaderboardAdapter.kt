@@ -1,11 +1,12 @@
-package com.elfalt.ledo
+package com.elfalt.ledo.Adapters
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.elfalt.ledo.R
+import com.elfalt.ledo.ui.LeaderboardUser
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.leaderboard_item.view.*
 
@@ -15,7 +16,9 @@ class LeaderboardAdapter (val userList:List<LeaderboardUser>):RecyclerView.Adapt
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
        val leaderboardView = LayoutInflater.from(parent.context).inflate(R.layout.leaderboard_item,parent,false)
-        return ViewHolder(leaderboardView)
+        return ViewHolder(
+            leaderboardView
+        )
     }
 
     override fun getItemCount(): Int {

@@ -1,13 +1,10 @@
-package com.elfalt.ledo
+package com.elfalt.ledo.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.elfalt.ledo.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.fragment_leaderboard.*
 
 class HomeScreen : AppCompatActivity() {
 
@@ -44,7 +41,8 @@ class HomeScreen : AppCompatActivity() {
                 R.id.graph -> {
 
 
-                    val leaderboard =Leaderboard.newInstance()
+                    val leaderboard =
+                        Leaderboard.newInstance()
                     openFragment(leaderboard)
 
                     return@OnNavigationItemSelectedListener true

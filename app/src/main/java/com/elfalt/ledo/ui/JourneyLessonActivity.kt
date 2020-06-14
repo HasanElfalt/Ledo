@@ -1,8 +1,9 @@
-package com.elfalt.ledo
+package com.elfalt.ledo.ui
 
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.elfalt.ledo.R
 import com.google.android.youtube.player.YouTubeBaseActivity
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
