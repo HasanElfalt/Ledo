@@ -47,14 +47,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Leaderboard"
+        android:text="@string/leader_board"
         android:textColor="#22d0c4"
         android:textSize="25sp"
         app:layout_constraintStart_toEndOf="@id/badge"
         app:layout_constraintTop_toTopOf="@id/badge"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/badge"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="80dp"
         style=""/>
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/recycler_view"

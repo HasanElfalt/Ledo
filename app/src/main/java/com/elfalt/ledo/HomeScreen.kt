@@ -3,8 +3,11 @@ package com.elfalt.ledo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.fragment_leaderboard.*
 
 class HomeScreen : AppCompatActivity() {
 
@@ -12,10 +15,16 @@ class HomeScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
 
+
+
+
         val bottomNavigation: BottomNavigationView = findViewById(R.id.btn_nav)
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
+
     }
+
+
 
     private val mOnNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -24,7 +33,7 @@ class HomeScreen : AppCompatActivity() {
 
                     val homeScrolled = HomeScrolled.newInstance()
                     openFragment(homeScrolled)
-                    
+
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.search -> {
@@ -33,9 +42,12 @@ class HomeScreen : AppCompatActivity() {
                 }
                 R.id.graph -> {
 
+
                     val leaderboard =Leaderboard.newInstance()
                     openFragment(leaderboard)
+
                     return@OnNavigationItemSelectedListener true
+
                 }
             }
             false
