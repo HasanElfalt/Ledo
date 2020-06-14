@@ -9,7 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#d2fcfa"
-    tools:context=".HomeScrolled">
+    tools:context=".ui.HomeScrolled">
 
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,10 +22,10 @@
         android:layout_height="56dp"
         android:scaleType="fitXY"
         android:layout_marginEnd="215dp"
-        app:layout_constraintBottom_toTopOf="@id/nav"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="80dp"
         android:src="@mipmap/line" />
 
     <ImageView
@@ -136,7 +136,7 @@
     <ImageView
         android:layout_width="145dp"
         android:layout_height="110dp"
-        android:layout_marginEnd="220dp"
+        android:layout_marginEnd="200dp"
         android:layout_marginTop="50dp"
         android:scaleType="fitXY"
         android:src="@mipmap/line_4"
@@ -198,7 +198,7 @@
         app:layout_constraintTop_toTopOf="@+id/maountains"
         android:layout_marginTop="100dp"
         android:layout_marginStart="80dp"
-        app:cardBackgroundColor="CCffffff">
+        app:cardBackgroundColor="#99ffffff">
 
         <TextView
             android:layout_width="wrap_content"
@@ -210,12 +210,8 @@
 
     </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:id="@+id/nav"
-        android:layout_height="wrap_content"
-        app:menu="@menu/home_bottom_navi"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

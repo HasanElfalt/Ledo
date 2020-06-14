@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="20dp"
+    android:background="@drawable/bachground_questions"
+    tools:context=".ui.QuestionsActivity">
+
+        <TextView
+            android:id="@+id/awareness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Support Systems"
+            android:textColor="@color/courseNameTextColor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Support Systems" />
+
+        <com.carlosmuvi.segmentedprogressbar.SegmentedProgressBar
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:id="@+id/segmentedProgressBar"
+            app:layout_constraintStart_toStartOf="@id/awareness"
+            app:layout_constraintEnd_toEndOf="@id/awareness"
+            app:layout_constraintTop_toBottomOf="@id/awareness"
+            app:segment_count="5"
+            app:gap_size="5dp"
+            app:container_color="@color/backgroundShape"
+            app:fill_color="@color/backgroundShape"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_book_shelf_lesson_finished"
+            android:id="@+id/book_shelf_lesson_finished"
+            app:layout_constraintStart_toStartOf="@id/lesson_quiz_num"
+            app:layout_constraintEnd_toEndOf="@id/lesson_quiz_num"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lesson 1 Quiz"
+            android:minWidth="140dp"
+            android:gravity="center"
+            android:background="@drawable/get_started_shape"
+            android:id="@+id/lesson_quiz_num"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="8dp"
+            android:padding="4dp"
+            android:textColor="@color/courseNameTextColor"
+            app:layout_constraintTop_toBottomOf="@id/book_shelf_lesson_finished"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/me"
+            android:id="@+id/profile"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toTopOf="@id/lesson_quiz_num"
+            app:layout_constraintBottom_toBottomOf="@id/lesson_quiz_num"
+            app:layout_constraintEnd_toStartOf="@id/dots"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_group"
+            android:id="@+id/dots"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@id/mic"
+            app:layout_constraintTop_toTopOf="@id/profile"
+            app:layout_constraintBottom_toBottomOf="@id/profile"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_microphone"
+            android:id="@+id/mic"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/profile"
+            app:layout_constraintBottom_toBottomOf="@id/profile"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Course related question goes in here?"
+            android:maxLines="3"
+            android:textSize="30sp"
+            android:textColor="@color/courseNameTextColor"
+            android:textStyle="bold"
+            android:id="@+id/question_text"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_answer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="120dp"
+            android:minHeight="120dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/question_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/card_view_answer2"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Answer 1"
+                    android:textSize="16sp"
+                    android:textColor="@color/courseNameTextColor"
+                    android:layout_gravity="bottom|center"
+                    android:paddingBottom="10dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_answer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="120dp"
+            android:minHeight="120dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/question_text"
+            app:layout_constraintStart_toEndOf="@id/card_view_answer1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Answer 2"
+                    android:textSize="16sp"
+                    android:textColor="@color/courseNameTextColor"
+                    android:layout_gravity="bottom|center"
+                    android:paddingBottom="10dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_answer3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="120dp"
+            android:minHeight="120dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/card_view_answer1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/card_view_answer4"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Answer 3"
+                    android:textSize="16sp"
+                    android:textColor="@color/courseNameTextColor"
+                    android:layout_gravity="bottom|center"
+                    android:paddingBottom="10dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_answer4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="120dp"
+            android:minHeight="120dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/card_view_answer2"
+            app:layout_constraintStart_toEndOf="@id/card_view_answer1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Answer 4"
+                    android:textSize="16sp"
+                    android:textColor="@color/courseNameTextColor"
+                    android:layout_gravity="bottom|center"
+                    android:paddingBottom="10dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_button"
+            android:text="@string/submit"
+            android:padding="16dp"
+            android:layout_marginBottom="20dp"
+            android:minWidth="200dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_view_answer4"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

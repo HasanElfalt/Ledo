@@ -1,12 +1,13 @@
-package com.elfalt.ledo
+package com.elfalt.ledo.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.elfalt.ledo.R
 
-class MainActivity : AppCompatActivity() {
+class QuestionsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_questions)
     }
 }

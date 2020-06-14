@@ -5,7 +5,19 @@
     <color name="colorAccent">#03DAC5</color>
 
     <color name="backgroundMainStartColor">#d2fcfa</color>
+
     <color name="backgroundMainEndColor">#60ebe4</color>
 
     <color name="getStartedTextColor">#35ccb1</color>
+
+    <color name="courseNameTextColor">#1f314a</color>
+
+    <color name="backgroundShape">#22d0c4</color>
+
+    <color name="colorOffline">#b8b8b8</color>
+
+    <color name="colorOnline">#2e7d32</color>
+
+    <color name="itemIcon">#00d1c5</color>
+
 </resources>

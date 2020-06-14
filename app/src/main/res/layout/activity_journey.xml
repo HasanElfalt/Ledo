@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundMainStartColor">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:context=".ui.JourneyActivity">
+
+        <TextView
+            android:id="@+id/awareness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Awareness Room"
+            android:textColor="@color/courseNameTextColor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Awareness Room" />
+
+        <com.carlosmuvi.segmentedprogressbar.SegmentedProgressBar
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:id="@+id/segmentedProgressBar"
+            app:layout_constraintStart_toStartOf="@id/awareness"
+            app:layout_constraintEnd_toEndOf="@id/awareness"
+            app:layout_constraintTop_toBottomOf="@id/awareness"
+            app:segment_count="5"
+            app:gap_size="5dp"
+            app:fill_color="@color/backgroundShape"/>
+
+        <ImageView
+            android:id="@+id/book_shelfImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_book_shelf"
+            app:layout_constraintEnd_toEndOf="@id/support_system"
+            app:layout_constraintStart_toStartOf="@id/support_system"
+            app:layout_constraintTop_toBottomOf="@id/segmentedProgressBar" />
+
+        <TextView
+            android:id="@+id/support_system"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/get_started_shape"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Support System"
+            android:textColor="@color/courseNameTextColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/strength_weakness"
+            app:layout_constraintStart_toStartOf="@id/strength_weakness"
+            app:layout_constraintTop_toTopOf="@id/core_values"
+            tools:text="Support System" />
+
+        <ImageView
+            android:id="@+id/info_core"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_info"
+            app:layout_constraintEnd_toEndOf="@id/core_values"
+            app:layout_constraintStart_toStartOf="@id/core_values"
+            app:layout_constraintTop_toBottomOf="@id/segmentedProgressBar" />
+
+        <TextView
+            android:id="@+id/core_values"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/get_started_shape"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Core Values"
+            android:textColor="@color/courseNameTextColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/goals_aspiration"
+            app:layout_constraintStart_toStartOf="@id/goals_aspiration"
+            app:layout_constraintTop_toBottomOf="@id/info_core"
+            tools:text="Core Values" />
+
+        <ImageView
+            android:id="@+id/info_strength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_info"
+            app:layout_constraintEnd_toEndOf="@id/strength_weakness"
+            app:layout_constraintStart_toStartOf="@id/strength_weakness"
+            app:layout_constraintTop_toBottomOf="@id/support_system" />
+
+        <TextView
+            android:id="@+id/strength_weakness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/get_started_shape"
+            android:padding="5dp"
+            android:text="Strength-Weakness"
+            android:textColor="@color/courseNameTextColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/goals_aspiration"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/info_strength"
+            tools:text="Strength-Weakness" />
+
+        <ImageView
+            android:id="@+id/info_goals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_info"
+            app:layout_constraintEnd_toEndOf="@id/goals_aspiration"
+            app:layout_constraintStart_toStartOf="@id/goals_aspiration"
+            app:layout_constraintTop_toBottomOf="@id/core_values" />
+
+        <TextView
+            android:id="@+id/goals_aspiration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/get_started_shape"
+            android:padding="5dp"
+            android:text="Goals and Aspiration"
+            android:textColor="@color/courseNameTextColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/strength_weakness"
+            app:layout_constraintTop_toBottomOf="@id/info_goals"
+            tools:text="Goals and Aspiration" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="20dp"
+            android:background="@drawable/background_white_top_corner_rounded"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/goals_aspiration">
+
+            <TextView
+                android:id="@+id/course_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:text="Self-awareness"
+                android:textColor="@color/courseNameTextColor"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Self-awareness" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lessons_recycler_view"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/course_name"
+                tools:listitem="@layout/item_list_lessons"
+                android:elevation="4dp"
+                android:translationZ="4dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
