@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.elfalt.ledo.R
+import com.elfalt.ledo.Users
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeScreen : AppCompatActivity() {
@@ -48,8 +49,12 @@ class HomeScreen : AppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
 
                 }
-                R.id.profile -> {
+                R.id.user -> {
 
+                    val user:Users = Users.newInstance()
+                    openFragment(user)
+
+                    return@OnNavigationItemSelectedListener true
                 }
 
             }
