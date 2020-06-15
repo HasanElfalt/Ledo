@@ -49,6 +49,13 @@ class HomeScreen : AppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
 
                 }
+                R.id.user ->{
+
+                    val users:Users = Users.newInstance()
+                    openFragment(users)
+
+                    return@OnNavigationItemSelectedListener true
+                }
             }
             false
         }
