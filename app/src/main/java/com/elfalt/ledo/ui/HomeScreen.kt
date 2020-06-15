@@ -1,13 +1,10 @@
-package com.elfalt.ledo
+package com.elfalt.ledo.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.elfalt.ledo.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.fragment_leaderboard.*
 
 class HomeScreen : AppCompatActivity() {
 
@@ -16,10 +13,11 @@ class HomeScreen : AppCompatActivity() {
         setContentView(R.layout.activity_home_screen)
 
 
-
+        openFragment(HomeScrolled.newInstance())
 
         val bottomNavigation: BottomNavigationView = findViewById(R.id.btn_nav)
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
 
 
     }
@@ -31,8 +29,8 @@ class HomeScreen : AppCompatActivity() {
             when (item.itemId) {
                 R.id.home -> {
 
-                    val homeScrolled = HomeScrolled.newInstance()
-                    openFragment(homeScrolled)
+                    val home = Home.newInstance()
+                    openFragment(home)
 
                     return@OnNavigationItemSelectedListener true
                 }
@@ -43,19 +41,17 @@ class HomeScreen : AppCompatActivity() {
                 R.id.graph -> {
 
 
-                    val leaderboard =Leaderboard.newInstance()
+                    val leaderboard =
+                        Leaderboard.newInstance()
                     openFragment(leaderboard)
 
                     return@OnNavigationItemSelectedListener true
 
                 }
-                R.id.user ->{
+                R.id.profile -> {
 
-                    val users:Users = Users.newInstance()
-                    openFragment(users)
-
-                    return@OnNavigationItemSelectedListener true
                 }
+
             }
             false
         }
@@ -67,4 +63,5 @@ class HomeScreen : AppCompatActivity() {
         transaction.commit()
 
     }
+
 }

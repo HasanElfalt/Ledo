@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#d2fcfa"
-    tools:context=".Home">
+    tools:context=".ui.Home">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="8dp"
             android:src="@mipmap/line" />
 
         <ImageView
@@ -68,7 +68,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="100dp"/>
+            android:layout_marginTop="60dp"/>
 
         <ImageView
             android:id="@+id/line3"
@@ -92,7 +92,7 @@
             app:layout_constraintEnd_toStartOf="@+id/maountains"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="250dp"/>
+            android:layout_marginTop="200dp"/>
 
         <ImageView
             android:id="@+id/tree"
@@ -206,11 +206,11 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="360dp"
-            android:layout_height="65dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             app:cardCornerRadius="25dp"
             app:cardElevation="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/maountains"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -229,7 +229,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginEnd="90dp"
+                android:layout_marginEnd="70dp"
                 android:text="30%"
                 android:textColor="#22d0c4"
                 android:textSize="20sp"
@@ -249,8 +249,9 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/man"
+                android:layout_gravity="center_vertical"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"/>
+                />
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"

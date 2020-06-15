@@ -9,7 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#d2fcfa"
-    tools:context=".HomeScrolled">
+    tools:context=".ui.HomeScrolled">
 
 
 <androidx.constraintlayout.widget.ConstraintLayout
