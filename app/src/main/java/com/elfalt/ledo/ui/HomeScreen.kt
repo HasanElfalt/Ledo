@@ -13,7 +13,7 @@ class HomeScreen : AppCompatActivity() {
         setContentView(R.layout.activity_home_screen)
 
 
-        openFragment(HomeScrolled.newInstance())
+        openFragment(Home.newInstance())
 
         val bottomNavigation: BottomNavigationView = findViewById(R.id.btn_nav)
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
@@ -36,6 +36,9 @@ class HomeScreen : AppCompatActivity() {
                 }
                 R.id.search -> {
 
+                    val search  = SearchFragment.newInstance()
+                    openFragment(search)
+
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.graph -> {
@@ -48,8 +51,12 @@ class HomeScreen : AppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
 
                 }
-                R.id.profile -> {
+                R.id.user -> {
 
+                    val user: Users = Users.newInstance()
+                    openFragment(user)
+
+                    return@OnNavigationItemSelectedListener true
                 }
 
             }

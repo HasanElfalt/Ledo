@@ -66,7 +66,7 @@
     <ImageView
         android:id="@+id/maountains"
         android:layout_width="280dp"
-        android:layout_height="170dp"
+        android:layout_height="190dp"
         android:src="@mipmap/maountains"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="@+id/mind"
@@ -92,12 +92,12 @@
         android:layout_width="40dp"
         android:layout_height="100dp"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="90dp"
         android:src="@mipmap/line_2"
         app:layout_constraintBottom_toTopOf="@+id/line3"
         app:layout_constraintEnd_toStartOf="@+id/maountains"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="250dp"/>
+        app:layout_constraintTop_toTopOf="@id/maountains"/>
 
     <ImageView
         android:id="@+id/tree"
@@ -147,7 +147,7 @@
          />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
+        android:id="@+id/card_mind"
         android:layout_width="150dp"
         android:layout_height="50dp"
         app:cardCornerRadius="25dp"
@@ -168,6 +168,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_self"
         android:layout_width="150dp"
         android:layout_height="50dp"
         app:cardElevation="8dp"
@@ -188,6 +189,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_personal"
         android:layout_width="165dp"
         android:layout_height="50dp"
         app:cardCornerRadius="25dp"
@@ -196,7 +198,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/line2"
         app:layout_constraintTop_toTopOf="@+id/maountains"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         android:layout_marginStart="80dp"
         app:cardBackgroundColor="#99ffffff">
 

@@ -1,10 +1,11 @@
-package com.elfalt.ledo
+package com.elfalt.ledo.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.elfalt.ledo.R
 
 class Users : Fragment() {
 
@@ -14,6 +15,7 @@ class Users : Fragment() {
 
 
     companion object {
-        fun newInstance(): Users = Users()
+        fun newInstance(): Users =
+            Users()
     }
 }
