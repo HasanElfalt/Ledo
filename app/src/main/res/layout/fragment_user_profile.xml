@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundMainStartColor"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <include
@@ -22,7 +23,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
 
             <ImageView
                 android:id="@+id/iv_profileImage"
@@ -31,20 +33,21 @@
                 android:layout_marginTop="60dp"
                 android:src="@drawable/user_pic"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.459"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
 
             <ImageView
                 android:id="@+id/iv_profile_state"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginBottom="60dp"
                 android:src="@drawable/offline"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_profileImage"
                 app:layout_constraintEnd_toEndOf="@+id/iv_profileImage"
                 app:layout_constraintTop_toTopOf="@+id/iv_profileImage"
-                app:layout_constraintVertical_bias="0.125" />
+                 />
 
 
             <ImageView
@@ -57,7 +60,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/iv_profileImage"
                 app:layout_constraintEnd_toEndOf="@+id/iv_profileImage"
                 app:layout_constraintTop_toTopOf="@+id/iv_profileImage"
-                app:layout_constraintVertical_bias="0.125" />
+                 />
 
 
             <TextView
@@ -67,9 +70,8 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
                 android:text="Emily Petresz"
-                android:textColor="#1f314a"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:textColor="#E61f314a"
+                android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="@+id/iv_profileImage"
                 app:layout_constraintStart_toStartOf="@+id/iv_profileImage"
                 app:layout_constraintTop_toBottomOf="@+id/iv_profileImage" />
@@ -82,8 +84,8 @@
                 android:layout_marginTop="6dp"
                 android:gravity="center_vertical"
                 android:text="Student"
-                android:textColor="#1f314a"
-                android:textSize="22sp"
+                android:textColor="#661f314a"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@+id/tv_name"
                 app:layout_constraintStart_toStartOf="@+id/tv_name"
                 app:layout_constraintTop_toBottomOf="@+id/tv_name" />
@@ -94,13 +96,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="13dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="30dp"
                 android:text="7"
-                android:textColor="#1f314a"
+                android:textColor="#CC1f314a"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/tv_numberOfPoints"
-                app:layout_constraintHorizontal_bias="0.18"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
@@ -109,12 +110,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="11dp"
-                android:layout_marginTop="20dp"
                 android:text="Courses"
-                android:textColor="#1f314a"
+                android:textColor="#661f314a"
                 android:textSize="22sp"
                 app:layout_constraintEnd_toEndOf="@+id/tv_numberOfCourses"
-                app:layout_constraintHorizontal_bias="0.565"
                 app:layout_constraintStart_toStartOf="@+id/tv_numberOfCourses"
                 app:layout_constraintTop_toBottomOf="@id/tv_numberOfCourses" />
 
@@ -123,10 +122,11 @@
                 android:id="@+id/tv_numberOfPoints"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="10dp"
                 android:gravity="center_horizontal"
                 android:text="193,79"
-                android:textColor="#1f314a"
+                android:textColor="#CC1f314a"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@id/tv_numberOfRank"
@@ -138,9 +138,9 @@
                 android:id="@+id/tv_points"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:text="Points"
-                android:textColor="#1f314a"
+                android:layout_marginStart="10dp"
+                android:textColor="#661f314a"
                 android:textSize="22sp"
                 app:layout_constraintEnd_toEndOf="@+id/tv_numberOfPoints"
                 app:layout_constraintStart_toStartOf="@+id/tv_numberOfPoints"
@@ -151,14 +151,13 @@
                 android:id="@+id/tv_numberOfRank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="13dp"
                 android:text="11"
-                android:textColor="#1f314a"
+                android:textColor="#CC1f314a"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.85"
                 app:layout_constraintStart_toEndOf="@id/tv_numberOfPoints"
                 app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
@@ -167,14 +166,12 @@
                 android:id="@+id/tv_rank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="11.5dp"
+
                 android:gravity="center"
                 android:text="Rank"
-                android:textColor="#1f314a"
+                android:textColor="#661f314a"
                 android:textSize="22sp"
                 app:layout_constraintEnd_toEndOf="@+id/tv_numberOfRank"
-                app:layout_constraintHorizontal_bias="0.333"
                 app:layout_constraintStart_toStartOf="@+id/tv_numberOfRank"
                 app:layout_constraintTop_toBottomOf="@+id/tv_numberOfRank" />
 
@@ -208,8 +205,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Quick Learner"
-                android:textColor="#1f314a"
-                android:textSize="16sp"
+                android:textColor="#E61f314a"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toTopOf="@+id/iv_quickLearner" />
@@ -219,18 +216,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Completed 1 course"
-                android:textColor="#1f314a"
+                android:textColor="#991f314a"
+                android:textSize="19sp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_quickLearner"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_quickLearner"
-                app:layout_constraintVertical_bias="1.0" />
+                />
 
             <ImageView
                 android:id="@+id/iv_master"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="30dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_quickLearner"
                 app:srcCompat="@drawable/ic_master_mind" />
@@ -240,8 +238,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Master Mind!"
-                android:textColor="#1f314a"
-                android:textSize="16sp"
+                android:textColor="#E61f314a"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toTopOf="@+id/iv_master" />
@@ -251,11 +249,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Got 1st place on leaderboard"
-                android:textColor="#1f314a"
+                android:textSize="19sp"
+                android:textColor="#991f314a"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_master"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_masterMind"
-                app:layout_constraintVertical_bias="1.0" />
+                />
 
 
             <ImageView
@@ -263,7 +262,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_master"
                 app:srcCompat="@drawable/ic_super_learner" />
@@ -273,8 +272,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Super Learner"
-                android:textColor="#1f314a"
-                android:textSize="16sp"
+                android:textColor="#E61f314a"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toTopOf="@+id/iv_Super" />
@@ -284,7 +283,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Completed more than 5 courses"
-                android:textColor="#1f314a"
+                android:textColor="#991f314a"
+                android:textSize="19sp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_Super"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_SuperLearner" />
@@ -295,7 +295,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_Super"
                 app:srcCompat="@drawable/ic_the_achiever" />
@@ -305,8 +305,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="The Achiever"
-                android:textColor="#1f314a"
-                android:textSize="16sp"
+                android:textColor="#E61f314a"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toTopOf="@+id/iv_TheAchiever" />
@@ -317,11 +317,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Logged in everyday for a month"
-                android:textColor="#1f314a"
+                android:textSize="19sp"
+                android:textColor="#991f314a"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_TheAchiever"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_The_achiever"
-                app:layout_constraintVertical_bias="1.0" />
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

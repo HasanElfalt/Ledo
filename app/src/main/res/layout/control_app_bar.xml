@@ -8,9 +8,10 @@
 
     <ImageButton
         android:id="@+id/iV_back"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -18,8 +19,8 @@
 
     <ImageButton
         android:id="@+id/iV_more"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/ic_more"
         android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
