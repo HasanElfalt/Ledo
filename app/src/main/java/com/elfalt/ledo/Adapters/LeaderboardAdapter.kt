@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.elfalt.ledo.R
-import com.elfalt.ledo.ui.LeaderboardUser
+import com.elfalt.ledo.pojo.LeaderboardUser
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.leaderboard_item.view.*
 
@@ -33,8 +33,8 @@ class LeaderboardAdapter (val userList:List<LeaderboardUser>):RecyclerView.Adapt
     }
 
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-     val name : TextView = itemView.name_profile
-     val point :TextView = itemView.point
+        val name : TextView = itemView.name_profile
+        val point :TextView = itemView.point
         val image: CircleImageView = itemView.profile_picture
 
     }

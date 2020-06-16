@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.elfalt.ledo.R
-import com.elfalt.ledo.ui.Lesson
+import com.elfalt.ledo.pojo.Lesson
 import kotlinx.android.synthetic.main.item_list_lessons.view.*
 
 class LessonsAdapter(val lessonList : List<Lesson>) : RecyclerView.Adapter<LessonsAdapter.LessonViewHolder>() {
