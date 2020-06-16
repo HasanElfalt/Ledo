@@ -13,7 +13,7 @@ class HomeScreen : AppCompatActivity() {
         setContentView(R.layout.activity_home_screen)
 
 
-        openFragment(HomeScrolled.newInstance())
+        openFragment(Home.newInstance())
 
         val bottomNavigation: BottomNavigationView = findViewById(R.id.btn_nav)
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
