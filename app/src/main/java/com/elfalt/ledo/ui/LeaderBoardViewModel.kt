@@ -9,6 +9,7 @@ import com.elfalt.ledo.pojo.LeaderboardUser
 class LeaderBoardViewModel : ViewModel() {
 
     private val leaderBoardList : MutableLiveData<List<LeaderboardUser>> by lazy { MutableLiveData<List<LeaderboardUser>>() }
+    private val badgesLiveData : MutableLiveData<List<Badge>> by lazy { MutableLiveData<List<Badge>>() }
 
     fun getLeaderBoardData() : LiveData<List<LeaderboardUser>>{
         val leaderBoardUser : MutableList<LeaderboardUser> = mutableListOf()
@@ -72,5 +73,69 @@ class LeaderBoardViewModel : ViewModel() {
         leaderBoardList.postValue(leaderBoardUser)
 
         return leaderBoardList
+    }
+
+    fun getBadgesList(): LiveData<List<Badge>> {
+
+        val badges : MutableList<Badge> = mutableListOf()
+
+        badges.add(
+            Badge(
+                "Badge 1",
+                "100,000 Points",
+                R.drawable.ic_quick_learner
+            )
+        )
+
+        badges.add(
+            Badge(
+                "Badge 2",
+                "200,000 Points",
+                R.drawable.ic_quick_learner
+            )
+        )
+
+        badges.add(
+            Badge(
+                "Badge 3",
+                "300,000 Points",
+                R.drawable.ic_quick_learner
+            )
+        )
+
+        badges.add(
+            Badge(
+                "Badge 4",
+                "400,000 Points",
+                R.drawable.ic_quick_learner
+            )
+        )
+
+        badges.add(
+            Badge(
+                "Badge 5",
+                "500,000 Points",
+                R.drawable.ic_quick_learner
+            )
+        )
+
+        badges.add(
+            Badge(
+                "Badge 6",
+                "600,000 Points",
+                R.drawable.ic_quick_learner
+            )
+        )
+
+        badges.add(
+            Badge(
+                "Badge 7",
+                "700,000 Points",
+                R.drawable.ic_quick_learner
+            )
+        )
+
+        badgesLiveData.postValue(badges)
+        return badgesLiveData
     }
 }
