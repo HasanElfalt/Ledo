@@ -76,7 +76,7 @@
              and bullet proofs ideas"/>
 
         <Button
-            android:id="@+id/start_journey"
+
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/start"
@@ -88,6 +88,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/background_button"
+            android:id="@+id/startButton"
             app:layout_constraintTop_toBottomOf="@id/item_details"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

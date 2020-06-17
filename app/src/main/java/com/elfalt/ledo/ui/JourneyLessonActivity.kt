@@ -1,8 +1,11 @@
 package com.elfalt.ledo.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
+import com.elfalt.ledo.BuildConfig
 import com.elfalt.ledo.R
 import com.google.android.youtube.player.YouTubeBaseActivity
 import com.google.android.youtube.player.YouTubeInitializationResult
@@ -12,13 +15,17 @@ import kotlinx.android.synthetic.main.activity_journey_lesson.*
 class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener,
     YouTubePlayer.PlaybackEventListener, YouTubePlayer.PlayerStateChangeListener  {
 
-    private val API_KEY  : String = com.elfalt.ledo.BuildConfig.API_KEY
-    private val VIDEO_ID : String = "9YlRIvdokMg"
+    private val API_KEY  : String = BuildConfig.API_KEY
+    private var VIDEO_ID : String = ""    
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_journey_lesson)
 
+        checked.visibility = View.INVISIBLE
+        
+
+        VIDEO_ID = intent!!.getStringExtra("videoID")
 
         videoFrame.initialize(API_KEY,this)
 
@@ -57,6 +64,8 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
 
     override fun onVideoEnded() {
         //Toast.makeText(this,"video Ended", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, QuestionsActivity:: class.java)
+        startActivity(intent)
     }
 
     override fun onError(p0: YouTubePlayer.ErrorReason?) {
