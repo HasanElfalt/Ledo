@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.activity_journey_lesson.*
 class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener,
     YouTubePlayer.PlaybackEventListener, YouTubePlayer.PlayerStateChangeListener  {
 
-    private val API_KEY  : String = com.elfalt.ledo.BuildConfig.API_KEY
     
 
     override fun onCreate(savedInstanceState: Bundle?) {
