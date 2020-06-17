@@ -27,12 +27,12 @@ class QuestionsActivity : AppCompatActivity() {
 
             val mAlertDialog = mBuilder.show()
 
-            mDialogView.agreebtn.setOnClickListener {
+            mDialogView.agree_btn.setOnClickListener {
                 val intent = Intent(this, CongratulationsActivity:: class.java)
                 startActivity(intent)
 
             }
-            mDialogView.cancelbtn.setOnClickListener {
+            mDialogView.cancel_btn.setOnClickListener {
                 mAlertDialog.dismiss()
 
             }
