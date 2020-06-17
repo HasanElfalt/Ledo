@@ -74,6 +74,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_checked"
             android:layout_marginStart="8dp"
+            android:id="@+id/checked"
             app:layout_constraintStart_toEndOf="@id/lesson_num"
             app:layout_constraintTop_toTopOf="@id/lesson_num"
             app:layout_constraintBottom_toBottomOf="@id/lesson_num"/>

@@ -15,27 +15,27 @@ class LessonViewModel : ViewModel() {
 
         lessons.add(
             Lesson("Support Systems", "Lesson 1", "Building an integral support system, " +
-                        "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas")
+                    "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "9YlRIvdokMg")
         )
 
         lessons.add(
             Lesson("Support Systems", "Lesson 2", "Building an integral support system, " +
-                        "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas")
+                        "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "tGdsOXZpyWE")
         )
 
         lessons.add(
             Lesson("Support Systems", "Lesson 3", "Building an integral support system, " +
-                        "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas")
+                        "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "Q7gBf8WE3i8")
         )
 
         lessons.add(
             Lesson("Support Systems", "Lesson 4", "Building an integral support system, " +
-                        "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas")
+                        "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "R9qVa4LoJx8")
         )
 
         lessons.add(
             Lesson("Support Systems", "Lesson 5", "Building an integral support system, " +
-                    "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas")
+                    "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "uyQIx2p7Qe8")
         )
 
         lessonsList.postValue(lessons)
