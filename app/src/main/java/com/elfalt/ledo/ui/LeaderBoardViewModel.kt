@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.elfalt.ledo.R
+import com.elfalt.ledo.pojo.Badge
 import com.elfalt.ledo.pojo.LeaderboardUser
 
 class LeaderBoardViewModel : ViewModel() {

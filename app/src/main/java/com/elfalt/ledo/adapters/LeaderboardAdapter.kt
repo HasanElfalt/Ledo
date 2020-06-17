@@ -1,4 +1,4 @@
-package com.elfalt.ledo.Adapters
+package com.elfalt.ledo.adapters
 
 import android.view.LayoutInflater
 import android.view.View
