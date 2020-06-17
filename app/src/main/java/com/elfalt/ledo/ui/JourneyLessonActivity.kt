@@ -16,7 +16,8 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
     YouTubePlayer.PlaybackEventListener, YouTubePlayer.PlayerStateChangeListener  {
 
     private val API_KEY  : String = BuildConfig.API_KEY
-    private var VIDEO_ID : String = ""    
+    private var VIDEO_ID : String = ""
+    private lateinit var lesson : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,8 +64,9 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
     }
 
     override fun onVideoEnded() {
-        //Toast.makeText(this,"video Ended", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"video Ended", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, QuestionsActivity:: class.java)
+        intent.putExtra("lesson_num",lesson)
         startActivity(intent)
     }
 
