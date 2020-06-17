@@ -17,7 +17,7 @@
             android:theme="@style/NoActionBar">
         </activity>
         <activity
-            android:name=".ui.HomeScreen"
+            android:name=".ui.HomeScreenActivity"
             android:theme="@style/NoActionBar" />
         <activity
             android:name=".ui.MainActivity"

@@ -9,11 +9,11 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.elfalt.ledo.Adapters.BadgeAdapter
-import com.elfalt.ledo.Adapters.LeaderboardAdapter
+import com.elfalt.ledo.adapters.BadgeAdapter
+import com.elfalt.ledo.adapters.LeaderboardAdapter
 import com.elfalt.ledo.R
+import com.elfalt.ledo.pojo.Badge
 import com.elfalt.ledo.pojo.LeaderboardUser
-import kotlinx.android.synthetic.main.badge_item.*
 import kotlinx.android.synthetic.main.fragment_leaderboard.view.*
 import kotlinx.android.synthetic.main.fragment_leaderboard.view.badge
 

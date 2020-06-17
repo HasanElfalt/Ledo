@@ -1,4 +1,4 @@
-package com.elfalt.ledo.Adapters
+package com.elfalt.ledo.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.elfalt.ledo.R
-import com.elfalt.ledo.ui.Badge
+import com.elfalt.ledo.pojo.Badge
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.badge_item.view.*
 

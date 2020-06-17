@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.elfalt.ledo.Adapters.LessonsAdapter
+import com.elfalt.ledo.adapters.LessonsAdapter
 import com.elfalt.ledo.R
 import kotlinx.android.synthetic.main.activity_journey.*
 
