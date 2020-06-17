@@ -22,6 +22,7 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
         setContentView(R.layout.activity_journey_lesson)
 
         checked.visibility = View.INVISIBLE
+        
 
         VIDEO_ID = intent!!.getStringExtra("videoID")
 
