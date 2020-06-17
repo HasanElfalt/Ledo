@@ -1,5 +1,6 @@
 package com.elfalt.ledo.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -16,6 +17,7 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
 
     private val API_KEY  : String = BuildConfig.API_KEY
     private var VIDEO_ID : String = ""
+    private lateinit var lesson : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +27,8 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
         
 
         VIDEO_ID = intent!!.getStringExtra("videoID")
+        lesson   = intent!!.getStringExtra("lesson")
+        lesson_num.text = "$lesson Reference"
 
         videoFrame.initialize(API_KEY,this)
 
@@ -63,6 +67,9 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
 
     override fun onVideoEnded() {
         Toast.makeText(this,"video Ended", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, QuestionsActivity:: class.java)
+        intent.putExtra("lesson_num",lesson)
+        startActivity(intent)
     }
 
     override fun onError(p0: YouTubePlayer.ErrorReason?) {

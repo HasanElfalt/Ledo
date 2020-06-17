@@ -32,6 +32,7 @@ class LessonsAdapter(private val lessonList : List<Lesson>) : RecyclerView.Adapt
         holder.start.setOnClickListener {
             val lessonVideo = Intent(it.context,JourneyLessonActivity::class.java)
             lessonVideo.putExtra("videoID",lessonList[position].videoID)
+            lessonVideo.putExtra("lesson",lessonList[position].lesson)
             ContextCompat.startActivity(it.context,lessonVideo,null)
         }
     }
