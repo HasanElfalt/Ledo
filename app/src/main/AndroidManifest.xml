@@ -19,6 +19,10 @@
         <activity
             android:name=".ui.HomeScreen"
             android:theme="@style/NoActionBar" >
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,14 +30,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.MainActivity"
-            android:theme="@style/NoActionBar">
-
-        </activity>
-        <activity
             android:name=".ui.QuestionsActivity"
             android:theme="@style/NoActionBar">
-
         </activity>
         <activity android:name=".ui.CongratulationsActivity"
             android:theme="@style/NoActionBar">
