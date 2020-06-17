@@ -14,7 +14,7 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
     YouTubePlayer.PlaybackEventListener, YouTubePlayer.PlayerStateChangeListener  {
 
     private val API_KEY  : String = com.elfalt.ledo.BuildConfig.API_KEY
-    private val VIDEO_ID : String = ""
+    
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
