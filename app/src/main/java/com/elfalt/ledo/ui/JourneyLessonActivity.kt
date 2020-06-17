@@ -1,5 +1,6 @@
 package com.elfalt.ledo.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -63,6 +64,8 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
 
     override fun onVideoEnded() {
         //Toast.makeText(this,"video Ended", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, QuestionsActivity:: class.java)
+        startActivity(intent)
     }
 
     override fun onError(p0: YouTubePlayer.ErrorReason?) {
