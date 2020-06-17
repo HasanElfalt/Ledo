@@ -2,6 +2,7 @@ package com.elfalt.ledo.ui
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.elfalt.ledo.BuildConfig
 import com.elfalt.ledo.R
@@ -20,6 +21,9 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_journey_lesson)
 
+        checked.visibility = View.INVISIBLE
+
+        VIDEO_ID = intent!!.getStringExtra("videoID")
 
         videoFrame.initialize(API_KEY,this)
 
