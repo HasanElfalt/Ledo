@@ -27,6 +27,8 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
         
 
         VIDEO_ID = intent!!.getStringExtra("videoID")
+        lesson   = intent!!.getStringExtra("lesson")
+        lesson_num.text = "$lesson Reference"
 
         videoFrame.initialize(API_KEY,this)
 
