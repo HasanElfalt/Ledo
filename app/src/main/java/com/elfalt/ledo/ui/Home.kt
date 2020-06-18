@@ -18,6 +18,7 @@ class Home : Fragment() {
 
         v.card_self.setOnClickListener {
             val intent = Intent (this.context, JourneyActivity:: class.java)
+            intent.putExtra("origin","Home")
             startActivity(intent)
         }
     return v

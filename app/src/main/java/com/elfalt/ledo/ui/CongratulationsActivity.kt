@@ -16,8 +16,8 @@ class CongratulationsActivity : AppCompatActivity() {
         next_button.setOnClickListener {
 
             val intent = Intent(this, JourneyActivity:: class.java)
+            intent.putExtra("origin","Congrats")
             startActivity(intent)
-            finish()
         }
 
 

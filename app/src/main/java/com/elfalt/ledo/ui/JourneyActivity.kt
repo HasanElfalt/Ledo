@@ -12,10 +12,12 @@ import kotlinx.android.synthetic.main.activity_journey.*
 class JourneyActivity : AppCompatActivity() {
 
     lateinit var lessonLessonViewModel : LessonViewModel
+    lateinit var origin : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_journey)
+        origin = intent!!.getStringExtra("origin")
 
         lessons_recycler_view.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
 
@@ -27,4 +29,8 @@ class JourneyActivity : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+        if(origin == "Home")
+            super.onBackPressed()
+    }
 }
