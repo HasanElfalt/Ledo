@@ -25,20 +25,20 @@ class LessonViewModel : ViewModel() {
         )
 
         lessons.add(
-            Lesson("Support Systems", "Lesson 2", "Building an integral support system, " +
+            Lesson("Core Values", "Lesson 2", "Building an integral support system, " +
                         "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "tGdsOXZpyWE",
             lessonTwo)
         )
 
         lessons.add(
-            Lesson("Support Systems", "Lesson 3", "Building an integral support system, " +
+            Lesson("Strength & Weakness", "Lesson 3", "Building an integral support system, " +
                         "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "Q7gBf8WE3i8",
             lessonThree)
         )
 
         lessons.add(
-            Lesson("Support Systems", "Lesson 4", "Building an integral support system, " +
-                        "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "R9qVa4LoJx8",
+            Lesson("Goal & Aspiration", "Lesson 4", "Building an integral support system, " +
+                        "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "uyQIx2p7Qe8",
             lessonFour)
         )
 
