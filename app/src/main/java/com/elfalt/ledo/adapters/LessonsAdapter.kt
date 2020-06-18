@@ -28,6 +28,9 @@ class LessonsAdapter(private val lessonList : List<Lesson>) : RecyclerView.Adapt
         holder.lessonName.text = lessonList[position].lessonName
         holder.lesson.text  = lessonList[position].lesson
         holder.details.text = lessonList[position].lessonDetails
+        holder.start.isEnabled = lessonList[position].enable
+
+        if(!lessonList[position].enable) { holder.start.setBackgroundResource(R.drawable.background_offline)}
 
         holder.start.setOnClickListener {
             val lessonVideo = Intent(it.context,JourneyLessonActivity::class.java)

@@ -22,6 +22,13 @@ class JourneyActivity : AppCompatActivity() {
         lessons_recycler_view.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
 
         lessonLessonViewModel = ViewModelProvider(this).get(LessonViewModel::class.java)
+
+        when(origin){
+            "Lesson 1"-> lessonLessonViewModel.lessonTwo   = true
+            "Lesson 2"-> lessonLessonViewModel.lessonThree = true
+            "Lesson 3"-> lessonLessonViewModel.lessonFour  = true
+        }
+
         lessonLessonViewModel.getLessonData().observe(this, Observer {
 
             lessons_recycler_view.adapter = LessonsAdapter(it)

@@ -12,11 +12,12 @@ class CongratulationsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_congratulation)
+        val lesson = intent.getStringExtra("lesson_num")
 
         next_button.setOnClickListener {
 
             val intent = Intent(this, JourneyActivity:: class.java)
-            intent.putExtra("origin","Congrats")
+            intent.putExtra("origin",lesson)
             startActivity(intent)
         }
 
