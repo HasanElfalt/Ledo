@@ -17,7 +17,8 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
-        lesson_quiz_num.text = "${intent.getStringExtra("lesson_num")} Quiz"
+        val lesson = intent.getStringExtra("lesson_num")
+        lesson_quiz_num.text = "$lesson Quiz"
 
         submitbtn.setOnClickListener{
 
