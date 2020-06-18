@@ -1,6 +1,8 @@
 package com.elfalt.ledo.ui
 
+import android.content.ComponentCallbacks2
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -18,6 +20,9 @@ class QuestionsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_questions)
 
 
+         card_view_answer1.setOnClickListener{
+
+         }
         submitbtn.setOnClickListener{
 
             val mDialogView = LayoutInflater.from(this).inflate(R.layout.questions_group_dialog,null)
