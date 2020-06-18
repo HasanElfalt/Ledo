@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import com.elfalt.ledo.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class HomeScreen : AppCompatActivity() {
+class HomeScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

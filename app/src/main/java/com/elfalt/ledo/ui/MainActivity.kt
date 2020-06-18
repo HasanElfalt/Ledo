@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         getStarted.setOnClickListener {
-            val intent = Intent(this, HomeScreen:: class.java)
+            val intent = Intent(this, HomeScreenActivity:: class.java)
             startActivity(intent)
         }
     }

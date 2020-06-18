@@ -17,6 +17,7 @@ class CongratulationsActivity : AppCompatActivity() {
 
             val intent = Intent(this, JourneyActivity:: class.java)
             startActivity(intent)
+            finish()
         }
 
 
