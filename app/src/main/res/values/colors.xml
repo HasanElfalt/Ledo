@@ -22,4 +22,6 @@
 
     <color name="itemIcon">#00d1c5</color>
 
+    <color name="disable">#1A090909</color>
+
 </resources>

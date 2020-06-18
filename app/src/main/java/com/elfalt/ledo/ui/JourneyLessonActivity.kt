@@ -10,6 +10,7 @@ import com.elfalt.ledo.R
 import com.google.android.youtube.player.YouTubeBaseActivity
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
+import kotlinx.android.synthetic.main.activity_journey.*
 import kotlinx.android.synthetic.main.activity_journey_lesson.*
 
 class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener,
@@ -29,6 +30,29 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
         VIDEO_ID = intent!!.getStringExtra("videoID")
         lesson   = intent!!.getStringExtra("lesson")
         lesson_num.text = "$lesson Reference"
+
+        when(lesson){
+            "Lesson 1" -> {
+                book_shelf_lesson_finished.setImageResource(R.drawable.ic_book_shelf)
+                awarenessText.text = "Support Systems"
+                segmentedProgressBar_video.setCompletedSegments(1)
+            }
+            "Lesson 2" -> {
+                book_shelf_lesson_finished.setImageResource(R.drawable.ic_book_shelf_lesson2)
+                awarenessText.text = "Core Values"
+                segmentedProgressBar_video.setCompletedSegments(2)
+            }
+            "Lesson 3" -> {
+                book_shelf_lesson_finished.setImageResource(R.drawable.ic_book_shelf_lesson3)
+                awarenessText.text = "Strength & Weakness"
+                segmentedProgressBar_video.setCompletedSegments(3)
+            }
+            "Lesson 4" -> {
+                book_shelf_lesson_finished.setImageResource(R.drawable.ic_book_shelf_lesson_finished)
+                awarenessText.text = "Goal & Aspiration"
+                segmentedProgressBar_video.setCompletedSegments(4)
+            }
+        }
 
         videoFrame.initialize(API_KEY,this)
 
