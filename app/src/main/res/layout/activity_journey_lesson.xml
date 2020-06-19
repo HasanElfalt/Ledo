@@ -18,13 +18,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/awareness"
+            android:id="@+id/awarenessText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:layout_marginStart="20dp"
             android:text="Support Systems"
             android:textColor="@color/courseNameTextColor"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,10 +35,11 @@
         <com.carlosmuvi.segmentedprogressbar.SegmentedProgressBar
             android:layout_width="0dp"
             android:layout_height="5dp"
-            android:id="@+id/segmentedProgressBar"
-            app:layout_constraintStart_toStartOf="@id/awareness"
-            app:layout_constraintEnd_toEndOf="@id/awareness"
-            app:layout_constraintTop_toBottomOf="@id/awareness"
+            android:id="@+id/segmentedProgressBar_video"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toStartOf="@id/awarenessText"
+            app:layout_constraintEnd_toEndOf="@id/awarenessText"
+            app:layout_constraintTop_toBottomOf="@id/awarenessText"
             app:segment_count="5"
             app:gap_size="5dp"
             app:fill_color="@color/backgroundShape"/>

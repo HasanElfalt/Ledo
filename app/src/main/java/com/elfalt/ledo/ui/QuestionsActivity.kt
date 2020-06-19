@@ -12,19 +12,17 @@ import com.elfalt.ledo.R
 import kotlinx.android.synthetic.main.activity_questions.*
 import kotlinx.android.synthetic.main.questions_group_dialog.view.*
 
-class QuestionsActivity : AppCompatActivity(),View.OnClickListener {
+class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
-        lesson_quiz_num.text = "${intent.getStringExtra("lesson_num")} Quiz"
+        val lesson = intent.getStringExtra("lesson_num")
+        lesson_quiz_num.text = "$lesson Quiz"
 
+        submitbtn.setOnClickListener{
 
-
-        submitbtn.setOnClickListener {
-
-            val mDialogView =
-                LayoutInflater.from(this).inflate(R.layout.questions_group_dialog, null)
+            val mDialogView = LayoutInflater.from(this).inflate(R.layout.questions_group_dialog,null)
 
             val mBuilder = AlertDialog.Builder(this)
                 .setView(mDialogView)
@@ -32,7 +30,8 @@ class QuestionsActivity : AppCompatActivity(),View.OnClickListener {
             val mAlertDialog = mBuilder.show()
 
             mDialogView.agree_btn.setOnClickListener {
-                val intent = Intent(this, CongratulationsActivity::class.java)
+                val intent = Intent(this, CongratulationsActivity:: class.java)
+                intent.putExtra("lesson",lesson)
                 startActivity(intent)
 
             }
@@ -93,5 +92,4 @@ class QuestionsActivity : AppCompatActivity(),View.OnClickListener {
         }
     }
 }
-
 
