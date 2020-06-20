@@ -63,9 +63,10 @@
 
     <TextView
         android:id="@+id/logintxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="20dp"
+        android:gravity="center"
         android:text="@string/log_in"
         android:textColor="@android:color/white"
         android:fontFamily="@font/circular_std_book"
