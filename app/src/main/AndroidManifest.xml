@@ -11,14 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
-        <activity android:name=".LoginScreen"></activity>
-        <activity android:name=".ui.JourneyLessonActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".LoginScreenActivity" />
+        <activity android:name=".ui.JourneyLessonActivity" />
         <activity
             android:name=".ui.JourneyActivity"
-            android:theme="@style/NoActionBar"></activity>
+            android:theme="@style/NoActionBar" />
         <activity
             android:name=".ui.HomeScreenActivity"
-            android:theme="@style/NoActionBar"></activity>
+            android:theme="@style/NoActionBar" />
         <activity
             android:name=".ui.MainActivity"
             android:theme="@style/NoActionBar">
@@ -30,10 +31,10 @@
         </activity>
         <activity
             android:name=".ui.QuestionsActivity"
-            android:theme="@style/NoActionBar"></activity>
+            android:theme="@style/NoActionBar" />
         <activity
             android:name=".ui.CongratulationsActivity"
-            android:theme="@style/NoActionBar"></activity>
+            android:theme="@style/NoActionBar" />
     </application>
 
 </manifest>
