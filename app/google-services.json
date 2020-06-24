@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "792144407865",
+    "firebase_url": "https://ledo-11be1.firebaseio.com",
+    "project_id": "ledo-11be1",
+    "storage_bucket": "ledo-11be1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792144407865:android:cd53f19dbb5b8cd07f0ce8",
+        "android_client_info": {
+          "package_name": "com.elfalt.ledo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "792144407865-056cg2kvk732orpvi8lknabopticj76s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key":  [
+        {
+          "current_key":"AIzaSyCe1kB4gbhk8wGHVG67EQI-ru4RRbXK4-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792144407865-056cg2kvk732orpvi8lknabopticj76s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

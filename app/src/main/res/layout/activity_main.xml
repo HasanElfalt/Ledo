@@ -63,15 +63,31 @@
 
     <TextView
         android:id="@+id/logintxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="20dp"
+        android:fontFamily="@font/circular_std_book"
+        android:gravity="center"
         android:text="@string/log_in"
         android:textColor="@android:color/white"
-        android:fontFamily="@font/circular_std_book"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getStarted" />
+<TextView
+    android:id="@+id/Registertxt"
+    android:layout_width="100dp"
+    android:layout_height="50dp"
+    android:layout_marginBottom="20dp"
+    android:fontFamily="@font/circular_std_book"
+    android:gravity="center"
+    android:text="Register"
+    android:textColor="@android:color/white"
+    android:textSize="20sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/logintxt"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

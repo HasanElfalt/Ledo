@@ -101,7 +101,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Course related \n question goes \n in here?"
+            android:text="Course related question goes in here?"
             android:maxLines="3"
             android:textSize="30sp"
             android:textColor="#E61f314a"

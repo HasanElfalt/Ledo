@@ -30,12 +30,14 @@ class LeaderboardAdapter (val userList:List<LeaderboardUser>):RecyclerView.Adapt
         holder.name.text = userList[position].Name
         holder.point.text=userList[position].Point
         holder.image.setImageResource(userList[position].Image)
+        holder.id.text = userList[position].Id
     }
 
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val name : TextView = itemView.name_profile
         val point :TextView = itemView.point
         val image: CircleImageView = itemView.profile_picture
+        val id : TextView = itemView.user_id
 
     }
 }
