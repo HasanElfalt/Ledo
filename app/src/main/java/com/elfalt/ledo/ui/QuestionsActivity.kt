@@ -1,7 +1,5 @@
 package com.elfalt.ledo.ui
 
-import android.content.ComponentCallbacks2
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -20,13 +18,6 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_questions)
         val lesson = intent.getStringExtra("lesson_num")
         lesson_quiz_num.text = "$lesson Quiz"
-
-        val sharedPrefEdit = getSharedPreferences("lessonFinished",Context.MODE_PRIVATE).edit()
-
-        sharedPrefEdit.putString("save",lesson)
-        sharedPrefEdit.commit()
-
-
 
         submitbtn.setOnClickListener{
 

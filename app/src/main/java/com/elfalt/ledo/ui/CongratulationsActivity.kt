@@ -1,5 +1,6 @@
 package com.elfalt.ledo.ui
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +14,10 @@ class CongratulationsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_congratulation)
         val lesson = intent.getStringExtra("lesson")
+
+        val sharedPrefEdit = getSharedPreferences("lessonFinished", Context.MODE_PRIVATE).edit()
+        sharedPrefEdit.putString("save",lesson)
+        sharedPrefEdit.apply()
 
         next_button.setOnClickListener {
 
