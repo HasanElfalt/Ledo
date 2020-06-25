@@ -20,16 +20,16 @@ class JourneyActivity : AppCompatActivity() {
         setContentView(R.layout.activity_journey)
         origin = intent.getStringExtra("origin")
 
-        val sharedPref = getSharedPreferences("lessonFinished",Context.MODE_PRIVATE)
+        val sharedPref = getSharedPreferences("settings",Context.MODE_PRIVATE)
         val defaultValue = "none"
-        val savedData = sharedPref.getString("save", defaultValue)
+        val lessonNum = sharedPref.getString("lessonNum", defaultValue)
 
 
         lessons_recycler_view.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
 
         lessonLessonViewModel = ViewModelProvider(this).get(LessonViewModel::class.java)
 
-        if(origin == "Home")    updateUI(savedData)
+        if(origin == "Home")    updateUI(lessonNum)
         else    updateUI(origin)
 
         lessonLessonViewModel.getLessonData().observe(this, Observer {

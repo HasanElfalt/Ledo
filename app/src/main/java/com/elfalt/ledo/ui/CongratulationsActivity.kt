@@ -15,8 +15,8 @@ class CongratulationsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_congratulation)
         val lesson = intent.getStringExtra("lesson")
 
-        val sharedPrefEdit = getSharedPreferences("lessonFinished", Context.MODE_PRIVATE).edit()
-        sharedPrefEdit.putString("save",lesson)
+        val sharedPrefEdit = getSharedPreferences("settings", Context.MODE_PRIVATE).edit()
+        sharedPrefEdit.putString("lessonNum",lesson)
         sharedPrefEdit.apply()
 
         next_button.setOnClickListener {

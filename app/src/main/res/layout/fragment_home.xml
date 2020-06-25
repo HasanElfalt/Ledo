@@ -166,8 +166,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Mind-Mapping"
-                android:textColor="#1f314a"
+                android:text="@string/mind_mapping"
+                android:textColor="@color/courseNameTextColor"
                 android:textSize="15sp" />
         </androidx.cardview.widget.CardView>
 
@@ -187,8 +187,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Self-awareness"
-                android:textColor="#1f314a"
+                android:text="@string/self_awareness"
+                android:textColor="@color/courseNameTextColor"
                 android:textSize="15sp" />
         </androidx.cardview.widget.CardView>
 
@@ -210,8 +210,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Personal-Branding"
-                android:textColor="#1f314a"
+                android:text="@string/personal_branding"
+                android:textColor="@color/courseNameTextColor"
                 android:textSize="15sp" />
 
         </androidx.cardview.widget.CardView>

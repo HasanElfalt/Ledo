@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.elfalt.ledo.R
-import kotlinx.android.synthetic.main.fragment_home_scrolled.view.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
 
 
 class Home : Fragment() {
@@ -21,6 +21,18 @@ class Home : Fragment() {
             intent.putExtra("origin","Home")
             startActivity(intent)
         }
+
+        v.card_mind.setOnClickListener {
+            val intent = Intent (this.context, JourneyActivity:: class.java)
+            intent.putExtra("origin","Home")
+            startActivity(intent)
+        }
+        v.card_personal.setOnClickListener {
+            val intent = Intent (this.context, JourneyActivity:: class.java)
+            intent.putExtra("origin","Home")
+            startActivity(intent)
+        }
+
     return v
     }
 
