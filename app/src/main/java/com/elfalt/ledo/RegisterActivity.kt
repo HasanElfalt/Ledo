@@ -36,7 +36,7 @@ class RegisterActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
 
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("Names")
+        mDatabase = FirebaseDatabase.getInstance().getReference("Usernames")
         Registerbtn.setOnClickListener {
             registerUser()
         }
@@ -46,26 +46,26 @@ class RegisterActivity : AppCompatActivity() {
             val usernameRegister = findViewById<TextInputLayout>(R.id.UsernameRegister)
             val passwordRegister = findViewById<TextInputLayout>(R.id.PasswordRegister)
 
-            val email = emailRegister.editText.toString().trim()
-            val usernameregister = usernameRegister.editText.toString().trim()
-            val passwordregister = passwordRegister.editText.toString().trim()
+            val emailregister = emailRegister.editText?.text.toString().trim()
+            val usernameregister = usernameRegister.editText?.text.toString().trim()
+            val passwordregister = passwordRegister.editText?.text.toString().trim()
 
 
-            if (!email.isEmpty() && !usernameregister.isEmpty() && !passwordregister.isEmpty()) {
-                mAuth.createUserWithEmailAndPassword(email, passwordregister).addOnCompleteListener(this, OnCompleteListener { task ->
+            if (!emailregister.isEmpty() && !usernameregister.isEmpty() && !passwordregister.isEmpty()) {
+                mAuth.createUserWithEmailAndPassword(emailregister, passwordregister).addOnCompleteListener(this, OnCompleteListener { task ->
 
                 if (task.isSuccessful) {
                     val user = mAuth.currentUser
                     val uid = user!!.uid
-                    mDatabase.child(uid).child("Name").setValue(usernameregister)
+                    mDatabase.child(uid).child("Username").setValue(usernameregister)
                     startActivity(Intent(this, LoginScreenActivity::class.java))
-                    Toast.makeText(this, "Successfully registered :)", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Successfully Registered :)", Toast.LENGTH_LONG).show()
                 }else {
-                    Toast.makeText(this, "Error registering, try again later :(", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Error Registering, try again", Toast.LENGTH_LONG).show()
                 }
             })
                 }else {
-                    Toast.makeText(this,"Please fill up the Credentials :|", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,"Please fill up the Credentials ", Toast.LENGTH_LONG).show()
                 }
             }
 
