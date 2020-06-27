@@ -21,7 +21,7 @@ class HomeScreenActivity : AppCompatActivity() {
 
         val sharedPref = getSharedPreferences("settings", Context.MODE_PRIVATE)
         val mindMappingCourse = sharedPref.getBoolean("mind_mapping_course", false)
-        val cardPersonalCourse = sharedPref.getBoolean("card_personal_course", false)
+        val cardPersonalCourse = sharedPref.getBoolean("personal_branding_course", false)
 
     }
 

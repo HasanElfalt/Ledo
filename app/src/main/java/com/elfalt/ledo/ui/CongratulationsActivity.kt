@@ -20,9 +20,17 @@ class CongratulationsActivity : AppCompatActivity() {
         sharedPrefEdit.apply()
 
         next_button.setOnClickListener {
+            val intent : Intent
+            if(lesson == "Lesson 4"){
+                intent = Intent(this, HomeScreenActivity:: class.java)
+                val sharedPref = getSharedPreferences("settings", Context.MODE_PRIVATE)
+                val mindMappingCourse = sharedPref.edit().putBoolean("mind_mapping_course", true)
+                //val cardPersonalCourse = sharedPref.putBoolean("personal_branding_course", true)
 
-            val intent = Intent(this, JourneyActivity:: class.java)
-            intent.putExtra("origin",lesson)
+            }else {
+                intent = Intent(this, JourneyActivity::class.java)
+                intent.putExtra("origin", lesson)
+            }
             startActivity(intent)
         }
 

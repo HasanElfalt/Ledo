@@ -1,6 +1,5 @@
 package com.elfalt.ledo.ui
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,8 +12,8 @@ import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class Home : Fragment() {
 
-    var mindMappingCourse  : Boolean = true
-    var cardPersonalCourse : Boolean = true
+    var mindMappingCourse  : Boolean = false
+    var cardPersonalCourse : Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 

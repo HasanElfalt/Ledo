@@ -35,7 +35,7 @@ class JourneyActivity : AppCompatActivity() {
         if(origin == "Home")    updateUI(lessonNum)
         else    updateUI(origin)
 
-        lessonLessonViewModel.getLessonData().observe(this, Observer {
+        lessonLessonViewModel.getLessonData(courseName).observe(this, Observer {
 
             lessons_recycler_view.adapter = LessonsAdapter(it)
         })
