@@ -1,5 +1,6 @@
 package com.elfalt.ledo.ui
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -18,7 +19,9 @@ class HomeScreenActivity : AppCompatActivity() {
         val bottomNavigation: BottomNavigationView = findViewById(R.id.btn_nav)
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-
+        val sharedPref = getSharedPreferences("settings", Context.MODE_PRIVATE)
+        val mindMappingCourse = sharedPref.getBoolean("mind_mapping_course", false)
+        val cardPersonalCourse = sharedPref.getBoolean("card_personal_course", false)
 
     }
 

@@ -19,6 +19,9 @@ class JourneyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_journey)
         origin = intent.getStringExtra("origin")
+        val courseName = intent.getStringExtra("courseName")
+
+        course_name.text = courseName
 
         val sharedPref = getSharedPreferences("settings",Context.MODE_PRIVATE)
         val defaultValue = "none"
