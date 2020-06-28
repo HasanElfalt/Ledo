@@ -27,7 +27,9 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
     lateinit var mDatabase: DatabaseReference
 
-
+    lateinit var  emailRegister: TextInputLayout
+    lateinit var usernameRegister: TextInputLayout
+    lateinit var passwordRegister : TextInputLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,38 +37,59 @@ class RegisterActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
-
         mDatabase = FirebaseDatabase.getInstance().getReference("Usernames")
+
+        emailRegister = findViewById(R.id.Email)
+        usernameRegister = findViewById(R.id.UsernameRegister)
+        passwordRegister = findViewById(R.id.PasswordRegister)
+
         Registerbtn.setOnClickListener {
-            registerUser()
-        }
-    }
-        private fun registerUser () {
-            val emailRegister=findViewById<TextInputLayout>(R.id.Email)
-            val usernameRegister = findViewById<TextInputLayout>(R.id.UsernameRegister)
-            val passwordRegister = findViewById<TextInputLayout>(R.id.PasswordRegister)
 
             val emailregister = emailRegister.editText?.text.toString().trim()
             val usernameregister = usernameRegister.editText?.text.toString().trim()
             val passwordregister = passwordRegister.editText?.text.toString().trim()
 
+            if (emailregister.isEmpty() ) {
+                emailRegister.error="Field can not be Empty"
+                return@setOnClickListener
 
-            if (!emailregister.isEmpty() && !usernameregister.isEmpty() && !passwordregister.isEmpty()) {
-                mAuth.createUserWithEmailAndPassword(emailregister, passwordregister).addOnCompleteListener(this, OnCompleteListener { task ->
+            }else{
+                emailRegister.isErrorEnabled=false
+            }
+            if(usernameregister.isEmpty()) {
+                usernameRegister.error="Field can not be Empty"
+                return@setOnClickListener
+            }else{
+
+                usernameRegister.isErrorEnabled=false
+
+            }
+            if(passwordregister.isEmpty()) {
+                passwordRegister.error="Field can not be Empty"
+                return@setOnClickListener
+            }else{
+
+                passwordRegister.isErrorEnabled=false
+            }
+
+                registerUser(emailregister,usernameregister,passwordregister)
+        }
+    }
+        private fun registerUser (email:String, username:String, password:String)
+        {
+                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, OnCompleteListener { task ->
 
                 if (task.isSuccessful) {
                     val user = mAuth.currentUser
                     val uid = user!!.uid
-                    mDatabase.child(uid).child("Username").setValue(usernameregister)
+                    mDatabase.child(uid).child("Username").setValue(username)
                     startActivity(Intent(this, LoginScreenActivity::class.java))
                     Toast.makeText(this, "Successfully Registered :)", Toast.LENGTH_LONG).show()
                 }else {
                     Toast.makeText(this, "Error Registering, try again", Toast.LENGTH_LONG).show()
                 }
             })
-                }else {
-                    Toast.makeText(this,"Please fill up the Credentials ", Toast.LENGTH_LONG).show()
-                }
+
             }
 
         }
