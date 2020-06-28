@@ -27,7 +27,7 @@ class LoginScreenActivity : AppCompatActivity() {
 
         mDatabase = FirebaseDatabase.getInstance().getReference("Usernames")
 
-        emailLogin = findViewById(R.id.Email)
+        emailLogin = findViewById(R.id.Email_login)
         passwordLogin = findViewById(R.id.Password)
 
         loginbtn.setOnClickListener {
