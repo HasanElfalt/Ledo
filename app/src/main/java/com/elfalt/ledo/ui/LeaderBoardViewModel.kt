@@ -19,7 +19,8 @@ class LeaderBoardViewModel : ViewModel() {
             LeaderboardUser(
                 "Hannah Tran",
                 "190,490 Points",
-                R.drawable.hannah
+                R.drawable.hannah,
+                "1"
             )
         )
 
@@ -27,7 +28,8 @@ class LeaderBoardViewModel : ViewModel() {
             LeaderboardUser(
                 "Louisa McGee",
                 "128,480 Points",
-                R.drawable.louisa
+                R.drawable.louisa,
+                "2"
             )
         )
 
@@ -35,7 +37,8 @@ class LeaderBoardViewModel : ViewModel() {
             LeaderboardUser(
                 "Walter Osborne",
                 "93,898 Points",
-                R.drawable.walter
+                R.drawable.walter,
+                "3"
             )
         )
 
@@ -43,7 +46,8 @@ class LeaderBoardViewModel : ViewModel() {
             LeaderboardUser(
                 "Margaret Moreno",
                 "80,389 Points",
-                R.drawable.margaret
+                R.drawable.margaret,
+                "4"
             )
         )
 
@@ -51,7 +55,8 @@ class LeaderBoardViewModel : ViewModel() {
             LeaderboardUser(
                 "Etta Silva",
                 "64,123 Points",
-                R.drawable.etta
+                R.drawable.etta,
+                "5"
             )
         )
 
@@ -59,7 +64,8 @@ class LeaderBoardViewModel : ViewModel() {
             LeaderboardUser(
                 "Sam Reynolds",
                 "55,366 Points",
-                R.drawable.sam
+                R.drawable.sam,
+                "6"
             )
         )
 
@@ -67,7 +73,8 @@ class LeaderBoardViewModel : ViewModel() {
             LeaderboardUser(
                 "Jon Rashford",
                 "45,455 Points",
-                R.drawable.jon
+                R.drawable.jon,
+                "7"
             )
         )
 
