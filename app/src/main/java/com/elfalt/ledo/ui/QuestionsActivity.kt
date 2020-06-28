@@ -17,6 +17,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
         val lesson = intent.getStringExtra("lesson_num")
+        val courseName = intent.getStringExtra("courseName")
         lesson_quiz_num.text = "$lesson Quiz"
 
         submitbtn.setOnClickListener{
@@ -31,6 +32,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
             mDialogView.agree_btn.setOnClickListener {
                 val intent = Intent(this, CongratulationsActivity:: class.java)
                 intent.putExtra("lesson",lesson)
+                intent.putExtra("courseName", courseName)
                 startActivity(intent)
 
             }

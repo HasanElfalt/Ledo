@@ -10,10 +10,10 @@ import com.elfalt.ledo.adapters.LessonsAdapter
 import com.elfalt.ledo.R
 import kotlinx.android.synthetic.main.activity_journey.*
 
-class JourneyActivity : AppCompatActivity() {
+open class JourneyActivity : AppCompatActivity() {
 
-    lateinit var lessonLessonViewModel : LessonViewModel
-    lateinit var origin : String
+    private lateinit var lessonLessonViewModel : LessonViewModel
+    private lateinit var origin : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +37,7 @@ class JourneyActivity : AppCompatActivity() {
 
         lessonLessonViewModel.getLessonData(courseName).observe(this, Observer {
 
-            lessons_recycler_view.adapter = LessonsAdapter(it)
+            lessons_recycler_view.adapter = LessonsAdapter(it,courseName)
         })
 
     }

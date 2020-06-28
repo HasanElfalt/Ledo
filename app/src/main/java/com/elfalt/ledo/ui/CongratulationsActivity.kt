@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.elfalt.ledo.R
 import kotlinx.android.synthetic.main.activity_congratulation.*
 
@@ -14,24 +15,28 @@ class CongratulationsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_congratulation)
         val lesson = intent.getStringExtra("lesson")
+        val courseName = intent.getStringExtra("courseName")
 
         val sharedPrefEdit = getSharedPreferences("settings", Context.MODE_PRIVATE).edit()
         sharedPrefEdit.putString("lessonNum",lesson)
-        sharedPrefEdit.apply()
+        if(courseName == "Self Awareness" && lesson == "Lesson 4"){
+            sharedPrefEdit.putBoolean("mind_mapping_course", true)
+        }else if(courseName == "Mind Mapping" && lesson == "Lesson 4"){
+            sharedPrefEdit.putBoolean("personal_branding_course", true)
+        }
+         sharedPrefEdit.apply()
 
         next_button.setOnClickListener {
-            val intent : Intent
-            if(lesson == "Lesson 4"){
-                intent = Intent(this, HomeScreenActivity:: class.java)
-                val sharedPref = getSharedPreferences("settings", Context.MODE_PRIVATE)
-                val mindMappingCourse = sharedPref.edit().putBoolean("mind_mapping_course", true)
-                //val cardPersonalCourse = sharedPref.putBoolean("personal_branding_course", true)
 
+            if(lesson == "Lesson 4"){
+                val intent = Intent(this, HomeScreenActivity:: class.java)
+                startActivity(intent)
             }else {
-                intent = Intent(this, JourneyActivity::class.java)
+                val intent = Intent(this, JourneyActivity::class.java)
                 intent.putExtra("origin", lesson)
+                intent.putExtra("courseName", courseName)
+                startActivity(intent)
             }
-            startActivity(intent)
         }
 
 
