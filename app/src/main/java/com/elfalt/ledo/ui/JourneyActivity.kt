@@ -10,31 +10,36 @@ import com.elfalt.ledo.adapters.LessonsAdapter
 import com.elfalt.ledo.R
 import kotlinx.android.synthetic.main.activity_journey.*
 
-class JourneyActivity : AppCompatActivity() {
+open class JourneyActivity : AppCompatActivity() {
 
-    lateinit var lessonLessonViewModel : LessonViewModel
-    lateinit var origin : String
+    private lateinit var lessonLessonViewModel : LessonViewModel
+    private lateinit var origin : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_journey)
         origin = intent.getStringExtra("origin")
+        val courseName = intent.getStringExtra("courseName")
 
-        val sharedPref = getSharedPreferences("lessonFinished",Context.MODE_PRIVATE)
-        val defaultValue = "none"
-        val savedData = sharedPref.getString("save", defaultValue)
+        course_name.text = courseName
 
+        val sharedPref = getSharedPreferences("settings",Context.MODE_PRIVATE)
+        val lessonNum = when(courseName) {
+            "Self Awareness"    -> sharedPref.getString("lessonSelf", "Lesson 0")
+            "Mind Mapping"      -> sharedPref.getString("lessonMind", "Lesson 0")
+            else -> sharedPref.getString("lessonPersonal", "Lesson 0")
+        }
 
         lessons_recycler_view.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
 
         lessonLessonViewModel = ViewModelProvider(this).get(LessonViewModel::class.java)
 
-        if(origin == "Home")    updateUI(savedData)
+        if(origin == "Home")    updateUI(lessonNum)
         else    updateUI(origin)
 
-        lessonLessonViewModel.getLessonData().observe(this, Observer {
+        lessonLessonViewModel.getLessonData(courseName).observe(this, Observer {
 
-            lessons_recycler_view.adapter = LessonsAdapter(it)
+            lessons_recycler_view.adapter = LessonsAdapter(it,courseName)
         })
 
     }
@@ -50,13 +55,16 @@ class JourneyActivity : AppCompatActivity() {
                 lessonLessonViewModel.lessonTwo = true
                 info_core.setImageResource(R.drawable.ic_book_shelf_lesson2)
                 core_values.alpha = 1.0F
+                segmentedProgressBar.setCompletedSegments(1)
             }
             "Lesson 2"-> {lessonLessonViewModel.lessonTwo   = true
                 info_core.setImageResource(R.drawable.ic_book_shelf_lesson2)
                 core_values.alpha = 1.0F
                 lessonLessonViewModel.lessonThree = true
                 info_strength.setImageResource(R.drawable.ic_book_shelf_lesson3)
-                strength_weakness.alpha = 1.0F}
+                strength_weakness.alpha = 1.0F
+                segmentedProgressBar.setCompletedSegments(2)
+            }
             "Lesson 3"-> {lessonLessonViewModel.lessonTwo   = true
                 info_core.setImageResource(R.drawable.ic_book_shelf_lesson2)
                 core_values.alpha = 1.0F
@@ -65,7 +73,9 @@ class JourneyActivity : AppCompatActivity() {
                 strength_weakness.alpha = 1.0F
                 lessonLessonViewModel.lessonFour  = true
                 info_goals.setImageResource(R.drawable.ic_book_shelf_lesson_finished)
-                goals_aspiration.alpha = 1.0F}
+                goals_aspiration.alpha = 1.0F
+                segmentedProgressBar.setCompletedSegments(3)
+            }
             "Lesson 4" ->{lessonLessonViewModel.lessonTwo   = true
                 info_core.setImageResource(R.drawable.ic_book_shelf_lesson2)
                 core_values.alpha = 1.0F
@@ -74,7 +84,9 @@ class JourneyActivity : AppCompatActivity() {
                 strength_weakness.alpha = 1.0F
                 lessonLessonViewModel.lessonFour  = true
                 info_goals.setImageResource(R.drawable.ic_book_shelf_lesson_finished)
-                goals_aspiration.alpha = 1.0F }
+                goals_aspiration.alpha = 1.0F
+                segmentedProgressBar.setCompletedSegments(4)
+            }
         }
     }
 }

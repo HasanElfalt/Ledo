@@ -29,9 +29,8 @@
             app:layout_constraintStart_toStartOf="@id/awareness"
             app:layout_constraintEnd_toEndOf="@id/awareness"
             app:layout_constraintTop_toBottomOf="@id/awareness"
-            app:segment_count="5"
+            app:segment_count="4"
             app:gap_size="5dp"
-            app:container_color="@color/backgroundShape"
             app:fill_color="@color/backgroundShape"/>
 
         <ImageView

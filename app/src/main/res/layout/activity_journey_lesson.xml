@@ -40,7 +40,7 @@
             app:layout_constraintStart_toStartOf="@id/awarenessText"
             app:layout_constraintEnd_toEndOf="@id/awarenessText"
             app:layout_constraintTop_toBottomOf="@id/awarenessText"
-            app:segment_count="5"
+            app:segment_count="4"
             app:gap_size="5dp"
             app:fill_color="@color/backgroundShape"/>
 

@@ -14,36 +14,109 @@ class LessonViewModel : ViewModel() {
     var lessonFour  = false
 
 
-    fun getLessonData() : LiveData<List<Lesson>>{
+    fun getLessonData(courseName : String) : LiveData<List<Lesson>>{
+
+        lessonsList.postValue(
+            when(courseName){
+                "Self Awareness" -> getSelfLessons()
+                "Mind Mapping"   -> getMindLessons()
+                else         -> getPersonalLessons()
+            }
+        )
+
+        return lessonsList
+    }
+
+    private fun getSelfLessons() : List<Lesson>{
 
         val lessons : MutableList<Lesson> = mutableListOf()
 
         lessons.add(
             Lesson("Support Systems", "Lesson 1", "Building an integral support system, " +
                     "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "9YlRIvdokMg",
-            lessonOne)
+                lessonOne)
         )
 
         lessons.add(
             Lesson("Core Values", "Lesson 2", "Building an integral support system, " +
-                        "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "tGdsOXZpyWE",
-            lessonTwo)
+                    "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "tGdsOXZpyWE",
+                lessonTwo)
         )
 
         lessons.add(
             Lesson("Strength & Weakness", "Lesson 3", "Building an integral support system, " +
-                        "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "Q7gBf8WE3i8",
-            lessonThree)
+                    "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "Q7gBf8WE3i8",
+                lessonThree)
         )
 
         lessons.add(
             Lesson("Goal & Aspiration", "Lesson 4", "Building an integral support system, " +
-                        "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "uyQIx2p7Qe8",
-            lessonFour)
+                    "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "uyQIx2p7Qe8",
+                lessonFour)
         )
 
-        lessonsList.postValue(lessons)
+        return lessons
+    }
 
-        return lessonsList
+    private fun getMindLessons() : List<Lesson>{
+
+        val lessons : MutableList<Lesson> = mutableListOf()
+
+        lessons.add(
+            Lesson("Support Systems", "Lesson 1", "Building an integral support system, " +
+                    "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "xges9V4rLms",
+                lessonOne)
+        )
+
+        lessons.add(
+            Lesson("Core Values", "Lesson 2", "Building an integral support system, " +
+                    "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "5nTuScU70As",
+                lessonTwo)
+        )
+
+        lessons.add(
+            Lesson("Strength & Weakness", "Lesson 3", "Building an integral support system, " +
+                    "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "kCKZ75VDaSI",
+                lessonThree)
+        )
+
+        lessons.add(
+            Lesson("Goal & Aspiration", "Lesson 4", "Building an integral support system, " +
+                    "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "xCyjFipytRE",
+                lessonFour)
+        )
+
+        return lessons
+    }
+
+    private fun getPersonalLessons() : List<Lesson>{
+
+        val lessons : MutableList<Lesson> = mutableListOf()
+
+        lessons.add(
+            Lesson("Support Systems", "Lesson 1", "Building an integral support system, " +
+                    "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "9q-AlAG8a2Q",
+                lessonOne)
+        )
+
+        lessons.add(
+            Lesson("Core Values", "Lesson 2", "Building an integral support system, " +
+                    "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "s3B7OeEHGRo",
+                lessonTwo)
+        )
+
+        lessons.add(
+            Lesson("Strength & Weakness", "Lesson 3", "Building an integral support system, " +
+                    "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "HowKJbgc5wI",
+                lessonThree)
+        )
+
+        lessons.add(
+            Lesson("Goal & Aspiration", "Lesson 4", "Building an integral support system, " +
+                    "Pushes you to grow, strech more, mainly asks why things wont work and bullet proofs ideas", "PYlaowox_fw",
+                lessonFour)
+        )
+
+        return lessons
     }
 }
