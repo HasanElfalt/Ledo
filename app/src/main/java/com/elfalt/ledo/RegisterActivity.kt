@@ -77,7 +77,8 @@ class RegisterActivity : AppCompatActivity() {
     }
         private fun registerUser (email:String, username:String, password:String)
         {
-                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, OnCompleteListener { task ->
+                mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, OnCompleteListener { task ->
 
                 if (task.isSuccessful) {
                     val user = mAuth.currentUser
