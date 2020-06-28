@@ -25,7 +25,8 @@
         android:id="@+id/Username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Username"
+        android:hint="Email Address"
+        app:errorEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,6 +36,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
             android:maxLines="1"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -44,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Password"
-
+        app:errorEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintBottom_toTopOf="@id/loginbtn"
         app:layout_constraintEnd_toEndOf="parent"
