@@ -24,9 +24,11 @@ open class JourneyActivity : AppCompatActivity() {
         course_name.text = courseName
 
         val sharedPref = getSharedPreferences("settings",Context.MODE_PRIVATE)
-        val defaultValue = "none"
-        val lessonNum = sharedPref.getString("lessonNum", defaultValue)
-
+        val lessonNum = when(courseName) {
+            "Self Awareness"    -> sharedPref.getString("lessonSelf", "Lesson 0")
+            "Mind Mapping"      -> sharedPref.getString("lessonMind", "Lesson 0")
+            else -> sharedPref.getString("lessonPersonal", "Lesson 0")
+        }
 
         lessons_recycler_view.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
 
@@ -53,13 +55,16 @@ open class JourneyActivity : AppCompatActivity() {
                 lessonLessonViewModel.lessonTwo = true
                 info_core.setImageResource(R.drawable.ic_book_shelf_lesson2)
                 core_values.alpha = 1.0F
+                segmentedProgressBar.setCompletedSegments(1)
             }
             "Lesson 2"-> {lessonLessonViewModel.lessonTwo   = true
                 info_core.setImageResource(R.drawable.ic_book_shelf_lesson2)
                 core_values.alpha = 1.0F
                 lessonLessonViewModel.lessonThree = true
                 info_strength.setImageResource(R.drawable.ic_book_shelf_lesson3)
-                strength_weakness.alpha = 1.0F}
+                strength_weakness.alpha = 1.0F
+                segmentedProgressBar.setCompletedSegments(2)
+            }
             "Lesson 3"-> {lessonLessonViewModel.lessonTwo   = true
                 info_core.setImageResource(R.drawable.ic_book_shelf_lesson2)
                 core_values.alpha = 1.0F
@@ -68,7 +73,9 @@ open class JourneyActivity : AppCompatActivity() {
                 strength_weakness.alpha = 1.0F
                 lessonLessonViewModel.lessonFour  = true
                 info_goals.setImageResource(R.drawable.ic_book_shelf_lesson_finished)
-                goals_aspiration.alpha = 1.0F}
+                goals_aspiration.alpha = 1.0F
+                segmentedProgressBar.setCompletedSegments(3)
+            }
             "Lesson 4" ->{lessonLessonViewModel.lessonTwo   = true
                 info_core.setImageResource(R.drawable.ic_book_shelf_lesson2)
                 core_values.alpha = 1.0F
@@ -77,7 +84,9 @@ open class JourneyActivity : AppCompatActivity() {
                 strength_weakness.alpha = 1.0F
                 lessonLessonViewModel.lessonFour  = true
                 info_goals.setImageResource(R.drawable.ic_book_shelf_lesson_finished)
-                goals_aspiration.alpha = 1.0F }
+                goals_aspiration.alpha = 1.0F
+                segmentedProgressBar.setCompletedSegments(4)
+            }
         }
     }
 }

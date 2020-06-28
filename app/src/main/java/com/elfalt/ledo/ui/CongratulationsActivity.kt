@@ -18,7 +18,13 @@ class CongratulationsActivity : AppCompatActivity() {
         val courseName = intent.getStringExtra("courseName")
 
         val sharedPrefEdit = getSharedPreferences("settings", Context.MODE_PRIVATE).edit()
-        sharedPrefEdit.putString("lessonNum",lesson)
+
+        when(courseName) {
+            "Self Awareness"    -> sharedPrefEdit.putString("lessonSelf", lesson)
+            "Mind Mapping"      -> sharedPrefEdit.putString("lessonMind", lesson)
+            "Personal Branding" -> sharedPrefEdit.putString("lessonPersonal", lesson)
+        }
+
         if(courseName == "Self Awareness" && lesson == "Lesson 4"){
             sharedPrefEdit.putBoolean("mind_mapping_course", true)
         }else if(courseName == "Mind Mapping" && lesson == "Lesson 4"){

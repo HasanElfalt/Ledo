@@ -20,6 +20,8 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         val courseName = intent.getStringExtra("courseName")
         lesson_quiz_num.text = "$lesson Quiz"
 
+        updateUI(lesson)
+
         submitbtn.setOnClickListener{
 
             val mDialogView = LayoutInflater.from(this).inflate(R.layout.questions_group_dialog,null)
@@ -89,6 +91,24 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                 answer2.setTextColor(Color.parseColor("#991f314a"))
                 card_view_answer3.setBackgroundResource(R.drawable.background_border)
                 answer3.setTextColor(Color.parseColor("#991f314a"))
+            }
+        }
+    }
+
+    private fun updateUI(save :String?){
+
+        when(save){
+            "Lesson 1"-> {
+                segmentedProgressBar.setCompletedSegments(1)
+            }
+            "Lesson 2"-> {
+                segmentedProgressBar.setCompletedSegments(2)
+            }
+            "Lesson 3"-> {
+                segmentedProgressBar.setCompletedSegments(3)
+            }
+            "Lesson 4" ->{
+                segmentedProgressBar.setCompletedSegments(4)
             }
         }
     }
