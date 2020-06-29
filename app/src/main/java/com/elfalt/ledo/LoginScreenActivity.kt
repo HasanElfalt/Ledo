@@ -25,11 +25,6 @@ class LoginScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_screen)
 
-        CancelRegister.setOnClickListener {
-            val intent = Intent(this, MainActivity:: class.java)
-            startActivity(intent)
-        }
-
         mAuth = FirebaseAuth.getInstance()
 
         mDatabase = FirebaseDatabase.getInstance().getReference("Usernames")
@@ -59,6 +54,7 @@ class LoginScreenActivity : AppCompatActivity() {
             }
             
             loginUser(email,password)
+            finish()
         }
     }
 
