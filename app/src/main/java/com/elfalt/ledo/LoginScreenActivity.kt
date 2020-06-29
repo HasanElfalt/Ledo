@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.elfalt.ledo.ui.HomeScreenActivity
+import com.elfalt.ledo.ui.MainActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login_screen.*
+import kotlinx.android.synthetic.main.activity_register.*
 
 
 class LoginScreenActivity : AppCompatActivity() {
@@ -23,11 +25,16 @@ class LoginScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_screen)
 
+        CancelRegister.setOnClickListener {
+            val intent = Intent(this, MainActivity:: class.java)
+            startActivity(intent)
+        }
+
         mAuth = FirebaseAuth.getInstance()
 
         mDatabase = FirebaseDatabase.getInstance().getReference("Usernames")
 
-        emailLogin = findViewById(R.id.Email)
+        emailLogin = findViewById(R.id.Email_login)
         passwordLogin = findViewById(R.id.Password)
 
         loginbtn.setOnClickListener {

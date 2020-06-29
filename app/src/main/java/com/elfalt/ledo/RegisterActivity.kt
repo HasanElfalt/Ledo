@@ -35,6 +35,10 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        CancelRegister.setOnClickListener {
+            val intent =Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
         mAuth = FirebaseAuth.getInstance()
 
         mDatabase = FirebaseDatabase.getInstance().getReference("Usernames")

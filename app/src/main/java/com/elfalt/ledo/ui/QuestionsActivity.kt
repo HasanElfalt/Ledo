@@ -1,6 +1,5 @@
 package com.elfalt.ledo.ui
 
-import android.content.ComponentCallbacks2
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +17,10 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
         val lesson = intent.getStringExtra("lesson_num")
+        val courseName = intent.getStringExtra("courseName")
         lesson_quiz_num.text = "$lesson Quiz"
+
+        updateUI(lesson)
 
         submitbtn.setOnClickListener{
 
@@ -32,6 +34,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
             mDialogView.agree_btn.setOnClickListener {
                 val intent = Intent(this, CongratulationsActivity:: class.java)
                 intent.putExtra("lesson",lesson)
+                intent.putExtra("courseName", courseName)
                 startActivity(intent)
 
             }
@@ -88,6 +91,24 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                 answer2.setTextColor(Color.parseColor("#991f314a"))
                 card_view_answer3.setBackgroundResource(R.drawable.background_border)
                 answer3.setTextColor(Color.parseColor("#991f314a"))
+            }
+        }
+    }
+
+    private fun updateUI(save :String?){
+
+        when(save){
+            "Lesson 1"-> {
+                segmentedProgressBar.setCompletedSegments(1)
+            }
+            "Lesson 2"-> {
+                segmentedProgressBar.setCompletedSegments(2)
+            }
+            "Lesson 3"-> {
+                segmentedProgressBar.setCompletedSegments(3)
+            }
+            "Lesson 4" ->{
+                segmentedProgressBar.setCompletedSegments(4)
             }
         }
     }

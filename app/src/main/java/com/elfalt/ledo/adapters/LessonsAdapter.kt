@@ -13,7 +13,7 @@ import com.elfalt.ledo.pojo.Lesson
 import com.elfalt.ledo.ui.JourneyLessonActivity
 import kotlinx.android.synthetic.main.item_list_lessons.view.*
 
-class LessonsAdapter(private val lessonList : List<Lesson>) : RecyclerView.Adapter<LessonsAdapter.LessonViewHolder>() {
+class LessonsAdapter(private val lessonList : List<Lesson>, private val courseName : String) : RecyclerView.Adapter<LessonsAdapter.LessonViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LessonViewHolder {
 
@@ -36,6 +36,7 @@ class LessonsAdapter(private val lessonList : List<Lesson>) : RecyclerView.Adapt
             val lessonVideo = Intent(it.context,JourneyLessonActivity::class.java)
             lessonVideo.putExtra("videoID",lessonList[position].videoID)
             lessonVideo.putExtra("lesson",lessonList[position].lesson)
+            lessonVideo.putExtra("courseName",courseName)
             ContextCompat.startActivity(it.context,lessonVideo,null)
         }
     }
