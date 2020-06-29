@@ -19,6 +19,7 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
     private val API_KEY  : String = BuildConfig.API_KEY
     private var VIDEO_ID : String = ""
     private lateinit var lesson : String
+    private lateinit var courseName :String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +29,11 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
         
 
         VIDEO_ID = intent!!.getStringExtra("videoID")
-        lesson   = intent!!.getStringExtra("lesson")
+        lesson   = intent.getStringExtra("lesson")
+        courseName = intent.getStringExtra("courseName")
+
+        Toast.makeText(this, courseName,Toast.LENGTH_SHORT).show()
+
         lesson_num.text = "$lesson Reference"
 
         when(lesson){
@@ -93,6 +98,7 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
         Toast.makeText(this,"video Ended", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, QuestionsActivity:: class.java)
         intent.putExtra("lesson_num",lesson)
+        intent.putExtra("courseName", courseName)
         startActivity(intent)
     }
 

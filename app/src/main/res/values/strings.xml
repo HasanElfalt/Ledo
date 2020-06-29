@@ -11,4 +11,7 @@
     <string name="submit">Submit</string>
 
     <string name="leader_board">Leaderboard</string>
+    <string name="self_awareness">Self-awareness</string>
+    <string name="mind_mapping">Mind-Mapping</string>
+    <string name="personal_branding">Personal-Branding</string>
 </resources>

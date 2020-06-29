@@ -12,16 +12,12 @@ class HomeScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
 
-
         openFragment(Home.newInstance())
 
         val bottomNavigation: BottomNavigationView = findViewById(R.id.btn_nav)
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-
-
     }
-
 
 
     private val mOnNavigationItemSelectedListener =
@@ -70,6 +66,5 @@ class HomeScreenActivity : AppCompatActivity() {
         transaction.commit()
 
     }
-
 
 }

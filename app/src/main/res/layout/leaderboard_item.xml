@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="1"
         android:gravity="center"
-        android:textColor="#1f314a"
+        android:textColor="@color/backgroundShape"
         android:textStyle="bold"
         android:background="@drawable/shap_number"
         android:textSize="20sp"
