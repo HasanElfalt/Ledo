@@ -23,19 +23,11 @@ class MainActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
-        Registertxt.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
 
-        logintxt.setOnClickListener {
+        getStarted.setOnClickListener {
             val intent = Intent(this, LoginScreenActivity::class.java)
             startActivity(intent)
-        }
-        getStarted.setOnClickListener {
-            val intent = Intent(this, HomeScreenActivity::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 

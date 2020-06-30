@@ -25,9 +25,10 @@ class LoginScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_screen)
 
-        CancelRegister.setOnClickListener {
-            val intent = Intent(this, MainActivity:: class.java)
+        Registertxt.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         mAuth = FirebaseAuth.getInstance()
