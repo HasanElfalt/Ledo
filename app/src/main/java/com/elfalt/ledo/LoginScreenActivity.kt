@@ -54,7 +54,7 @@ class LoginScreenActivity : AppCompatActivity() {
             }
             
             loginUser(email,password)
-            finish()
+
         }
     }
 
@@ -62,10 +62,11 @@ class LoginScreenActivity : AppCompatActivity() {
     private fun loginUser(email:String,password:String)
     {
         mAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this,  OnCompleteListener {task->
+            .addOnCompleteListener(OnCompleteListener {task->
                     if (task.isSuccessful) {
                         startActivity(Intent(this, HomeScreenActivity::class.java))
                         Toast.makeText(this, "Successfully Log in", Toast.LENGTH_LONG).show()
+                        finish()
                     }else {
                         Toast.makeText(this, "Error Log in, try again", Toast.LENGTH_LONG).show()
                     }
