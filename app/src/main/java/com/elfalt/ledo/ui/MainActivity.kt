@@ -43,14 +43,14 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
 
         val currentUser = mAuth.currentUser
-        if(currentUser==null)
-        {
+
+        if(currentUser==null) {
 
         }else{
 
         }
 
-       }
+   }
 
 
     fun updateUI(currentUsers: FirebaseUser?){
