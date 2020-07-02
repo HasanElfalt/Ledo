@@ -78,7 +78,7 @@ class RegisterActivity : AppCompatActivity() {
                 val uid = user!!.uid
                 mDatabase.child(uid).child("Username").setValue(username)
                 startActivity(Intent(this, LoginScreenActivity::class.java))
-                Toast.makeText(this, "Successfully Registered :)", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Successfully Registered", Toast.LENGTH_LONG).show()
                 finish()
             }else {
                 Toast.makeText(this, "Error Registering, try again", Toast.LENGTH_LONG).show()
