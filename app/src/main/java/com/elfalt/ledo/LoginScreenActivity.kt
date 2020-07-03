@@ -9,6 +9,7 @@ import com.elfalt.ledo.ui.MainActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login_screen.*
@@ -75,14 +76,35 @@ class LoginScreenActivity : AppCompatActivity() {
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(OnCompleteListener {task->
                     if (task.isSuccessful) {
-                        startActivity(Intent(this, HomeScreenActivity::class.java))
-                        Toast.makeText(this, "Successfully Log in", Toast.LENGTH_LONG).show()
-                        finish()
+                        Toast.makeText(this, "Successfully log in", Toast.LENGTH_SHORT).show()
+                        val user =mAuth.currentUser
+                        updateUI(user)
                     }else {
-                        Toast.makeText(this, "Error Log in, try again", Toast.LENGTH_LONG).show()
+                        updateUI(null)
                     }
             })
 
     }
 
+    public override fun onStart() {
+        super.onStart()
+
+        val currentUser = mAuth.currentUser
+        updateUI(currentUser)
+    }
+
+
+    fun updateUI(currentUsers: FirebaseUser?) {
+
+        if (currentUsers!=null){
+            if (currentUsers.isEmailVerified) {
+                startActivity(Intent(this, HomeScreenActivity::class.java))
+                finish()
+            }else{
+                Toast.makeText(this, "Please verify your email address", Toast.LENGTH_SHORT).show()
+            }
+        }else{
+            Toast.makeText(this, "Login failed.", Toast.LENGTH_SHORT).show()
+        }
+    }
 }

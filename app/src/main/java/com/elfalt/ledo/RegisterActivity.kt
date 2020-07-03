@@ -74,14 +74,21 @@ class RegisterActivity : AppCompatActivity() {
                     .addOnCompleteListener(OnCompleteListener { task ->
 
             if (task.isSuccessful) {
-               val user = mAuth.currentUser
+                val user = mAuth.currentUser
+                user!!.sendEmailVerification()
+                   .addOnCompleteListener(OnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            startActivity(Intent(this, LoginScreenActivity::class.java))
+                            finish()
+                        }
+                    })
                 val uid = user!!.uid
                 mDatabase.child(uid).child("Username").setValue(username)
-                startActivity(Intent(this, LoginScreenActivity::class.java))
-                Toast.makeText(this, "Successfully Registered", Toast.LENGTH_LONG).show()
-                finish()
+
+                Toast.makeText(this, "Successfully Registered", Toast.LENGTH_SHORT).show()
+
             }else {
-                Toast.makeText(this, "Error Registering, try again", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Error Registering, try again", Toast.LENGTH_SHORT).show()
             }
         })
 

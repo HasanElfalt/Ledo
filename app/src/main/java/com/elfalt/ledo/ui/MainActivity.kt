@@ -32,24 +32,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-   public override fun onStart() {
-        super.onStart()
-
-        val currentUser = mAuth.currentUser
-        if(currentUser==null)
-        {
-
-        }else{
-
-        }
-
-       }
-
-
-    fun updateUI(currentUsers: FirebaseUser?){
-
-}
-
     }
 
 

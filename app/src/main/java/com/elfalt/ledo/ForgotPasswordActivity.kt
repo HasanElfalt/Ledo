@@ -42,10 +42,10 @@ class ForgotPasswordActivity : AppCompatActivity() {
                 .addOnCompleteListener(OnCompleteListener { task ->
                     if (task.isSuccessful) {
                         startActivity(Intent(this, LoginScreenActivity::class.java))
-                        Toast.makeText(this, "Email Send", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Email Send", Toast.LENGTH_SHORT).show()
                         finish()
                     }else {
-                        Toast.makeText(this, "Error Forgot Password, try again", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Error Forgot Password, try again", Toast.LENGTH_SHORT).show()
                     }
                 })
         }
