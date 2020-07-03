@@ -1,5 +1,6 @@
 package com.elfalt.ledo
 
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,8 +20,11 @@ import kotlinx.android.synthetic.main.activity_register.*
 class LoginScreenActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
     lateinit var mDatabase: DatabaseReference
+
     lateinit var emailLogin: TextInputLayout
     lateinit var passwordLogin: TextInputLayout
+
+    lateinit var progressdialog: ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,11 +42,12 @@ class LoginScreenActivity : AppCompatActivity() {
         }
 
         mAuth = FirebaseAuth.getInstance()
-
         mDatabase = FirebaseDatabase.getInstance().getReference("Usernames")
 
         emailLogin = findViewById(R.id.Email_login)
         passwordLogin = findViewById(R.id.Password)
+
+        progressdialog = ProgressDialog(this)
 
         loginbtn.setOnClickListener {
 
@@ -71,8 +76,12 @@ class LoginScreenActivity : AppCompatActivity() {
     }
 
 
-    private fun loginUser(email:String,password:String)
-    {
+    private fun loginUser(email:String,password:String) {
+
+        progressdialog.setMessage("Loading")
+        progressdialog.show()
+
+
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(OnCompleteListener {task->
                     if (task.isSuccessful) {
