@@ -2,47 +2,48 @@ package com.elfalt.ledo.ui
 
 import android.os.Bundle
 import android.view.*
+import android.view.View.inflate
+import android.widget.ImageButton
+import android.widget.PopupMenu
+import android.widget.TextView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.elfalt.ledo.R
+import kotlinx.android.synthetic.main.control_app_bar.*
+import kotlinx.android.synthetic.main.control_app_bar.view.*
+import kotlinx.android.synthetic.main.fragment_user_profile.view.*
 
 
-class Users : Fragment(),View.OnClickListener {
+class Users : Fragment(), PopupMenu.OnMenuItemClickListener{
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_user_profile, container, false)
 
+        v.control_app_bar.menu_profile.setOnClickListener {
+            popUpShow(it)
+        }
+
         return v
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
+    fun popUpShow(v : View){
+        val popupMenu = PopupMenu(context,v)
+        popupMenu.setOnMenuItemClickListener(this)
+        popupMenu.inflate(R.menu.menu_profile)
+        popupMenu.show()
     }
 
-    override fun onClick(v: View?) {
-        if(v?.id == R.id.log_out){
-            Toast.makeText(context,"log_out",Toast.LENGTH_SHORT).show()
+    override fun onMenuItemClick(item: MenuItem?): Boolean {
+        when(item?.itemId){
+            R.id.log_out -> Toast.makeText(context,"log_out",Toast.LENGTH_SHORT).show()
         }
-    }
-
-
-/*    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_profile,menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        if(item.itemId == R.id.log_out){
-
-        }
-        return super.onOptionsItemSelected(item)
+        return true
     }
 
     companion object {
         fun newInstance(): Users =
             Users()
-    }*/
+    }
 
 }
