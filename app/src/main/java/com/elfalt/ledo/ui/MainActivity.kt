@@ -23,40 +23,14 @@ class MainActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
-        Registertxt.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
+
+        getStarted.setOnClickListener {
+            val intent = Intent(this, LoginScreenActivity::class.java)
             startActivity(intent)
             finish()
         }
-
-        logintxt.setOnClickListener {
-            val intent = Intent(this, LoginScreenActivity::class.java)
-            startActivity(intent)
-        }
-        getStarted.setOnClickListener {
-            val intent = Intent(this, HomeScreenActivity::class.java)
-            startActivity(intent)
-        }
     }
 
-
-   public override fun onStart() {
-        super.onStart()
-
-        val currentUser = mAuth.currentUser
-        if(currentUser==null)
-        {
-
-        }else{
-
-        }
-
-       }
-
-
-    fun updateUI(currentUsers: FirebaseUser?){
-
-}
 
     }
 
