@@ -21,12 +21,13 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
     private lateinit var lesson : String
     private lateinit var courseName :String
 
+    private val videoPosition = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_journey_lesson)
 
         checked.visibility = View.INVISIBLE
-        
 
         VIDEO_ID = intent!!.getStringExtra("videoID")
         lesson   = intent.getStringExtra("lesson")
@@ -35,6 +36,12 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
         Toast.makeText(this, courseName,Toast.LENGTH_SHORT).show()
 
         lesson_num.text = "$lesson Reference"
+
+        updateUI()
+
+        videoFrame.initialize(API_KEY,this)
+    }
+    private fun updateUI(){
 
         when(lesson){
             "Lesson 1" -> {
@@ -58,9 +65,6 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
                 segmentedProgressBar_video.setCompletedSegments(4)
             }
         }
-
-        videoFrame.initialize(API_KEY,this)
-
     }
 
     override fun onInitializationSuccess(p0: YouTubePlayer.Provider?, p1: YouTubePlayer?, p2: Boolean) {
@@ -68,8 +72,8 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
         p1?.setPlayerStateChangeListener(this)
         p1?.setPlaybackEventListener(this)
 
-        if(!p2){
-            p1?.cueVideo(VIDEO_ID)
+        if(!p2) {
+            p1?.cueVideo(VIDEO_ID, videoPosition)
         }
     }
 
@@ -97,9 +101,11 @@ class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitialized
     override fun onVideoEnded() {
         Toast.makeText(this,"video Ended", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, QuestionsActivity:: class.java)
-        intent.putExtra("lesson_num",lesson)
+        intent.putExtra("lesson",lesson)
         intent.putExtra("courseName", courseName)
+        intent.putExtra("videoID",VIDEO_ID)
         startActivity(intent)
+        finish()
     }
 
     override fun onError(p0: YouTubePlayer.ErrorReason?) {

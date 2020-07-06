@@ -13,11 +13,17 @@ import kotlinx.android.synthetic.main.questions_group_dialog.view.*
 
 class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
+    private lateinit var lesson : String
+    private lateinit var courseName :String
+    private lateinit var VIDEO_ID : String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
-        val lesson = intent.getStringExtra("lesson_num")
-        val courseName = intent.getStringExtra("courseName")
+        lesson = intent.getStringExtra("lesson")
+        courseName = intent.getStringExtra("courseName")
+        VIDEO_ID  = intent.getStringExtra("videoID")
+
         lesson_quiz_num.text = "$lesson Quiz"
 
         updateUI(lesson)
@@ -49,10 +55,19 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         card_view_answer4.setOnClickListener(this)
     }
 
+    override fun onBackPressed() {
+        val intent = Intent(this, JourneyLessonActivity:: class.java)
+        intent.putExtra("lesson",lesson)
+        intent.putExtra("courseName", courseName)
+        intent.putExtra("videoID",VIDEO_ID)
+        startActivity(intent)
+    }
+
     override fun onClick(v: View?) {
-        val view = v!!.id
-        when (view) {
+        when (v!!.id) {
             R.id.card_view_answer1 -> {
+                submitbtn.isEnabled = true
+                submitbtn.setBackgroundResource(R.drawable.background_button)
                 card_view_answer1.setBackgroundResource(R.drawable.background_border_questions)
                 answer1.setTextColor(Color.parseColor("#22d0c4"))
                 card_view_answer2.setBackgroundResource(R.drawable.background_border)
@@ -63,6 +78,8 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                 answer4.setTextColor(Color.parseColor("#991f314a"))
             }
             R.id.card_view_answer2 -> {
+                submitbtn.isEnabled = true
+                submitbtn.setBackgroundResource(R.drawable.background_button)
                 card_view_answer2.setBackgroundResource(R.drawable.background_border_questions)
                 answer2.setTextColor(Color.parseColor("#22d0c4"))
                 card_view_answer1.setBackgroundResource(R.drawable.background_border)
@@ -73,6 +90,8 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                 answer4.setTextColor(Color.parseColor("#991f314a"))
             }
             R.id.card_view_answer3 -> {
+                submitbtn.isEnabled = true
+                submitbtn.setBackgroundResource(R.drawable.background_button)
                 card_view_answer3.setBackgroundResource(R.drawable.background_border_questions)
                 answer3.setTextColor(Color.parseColor("#22d0c4"))
                 card_view_answer1.setBackgroundResource(R.drawable.background_border)
@@ -83,6 +102,8 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                 answer4.setTextColor(Color.parseColor("#991f314a"))
             }
             R.id.card_view_answer4 -> {
+                submitbtn.isEnabled = true
+                submitbtn.setBackgroundResource(R.drawable.background_button)
                 card_view_answer4.setBackgroundResource(R.drawable.background_border_questions)
                 answer4.setTextColor(Color.parseColor("#22d0c4"))
                 card_view_answer1.setBackgroundResource(R.drawable.background_border)
