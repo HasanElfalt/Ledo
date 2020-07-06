@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="20dp"
-    android:background="@drawable/bachground_questions"
+    android:background="@drawable/background_questions"
     tools:context=".ui.QuestionsActivity">
 
         <TextView

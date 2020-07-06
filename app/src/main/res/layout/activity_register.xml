@@ -12,7 +12,7 @@
         android:id="@+id/Email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email Address"
+        android:hint="@string/email_address"
         app:helperTextEnabled="true"
         app:errorEnabled="true"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,8 +24,8 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:paddingStart="15dp"
-            android:inputType="textEmailAddress"
-            />
+            android:paddingEnd="5dp"
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -33,7 +33,7 @@
         android:id="@+id/PasswordRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="@string/password"
         app:helperTextEnabled="true"
         app:errorEnabled="true"
         android:layout_marginTop="20dp"
@@ -48,14 +48,14 @@
             android:inputType="textPassword"
             android:maxLines="1"
             android:paddingStart="15dp"
-            />
+            android:paddingEnd="5dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/UsernameRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="User Name"
+        android:hint="@string/user_name"
         app:helperTextEnabled="true"
         app:errorEnabled="true"
         android:layout_marginTop="20dp"
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:paddingStart="15dp"
-            />
+            android:paddingEnd="5dp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,21 +80,19 @@
     app:layout_constraintTop_toBottomOf="@id/PasswordRegister"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    >
+    app:layout_constraintBottom_toBottomOf="parent" >
     <androidx.cardview.widget.CardView
         android:id="@+id/Registerbtn"
         android:layout_width="150dp"
         android:layout_height="50dp"
         app:cardCornerRadius="25dp"
-        app:cardBackgroundColor="#ffffff"
+        app:cardBackgroundColor="@android:color/white"
         app:cardElevation="15dp"
-        android:layout_marginEnd="50dp"
-        >
+        android:layout_marginEnd="50dp" >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="@string/register"
             android:textColor="@color/getStartedTextColor"
             android:textStyle="bold"
             android:textSize="25sp"
@@ -106,13 +104,12 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         app:cardCornerRadius="25dp"
-        app:cardBackgroundColor="#ffffff"
-        app:cardElevation="15dp"
-        >
+        app:cardBackgroundColor="@android:color/white"
+        app:cardElevation="15dp" >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:textColor="@color/getStartedTextColor"
             android:textStyle="bold"
             android:textSize="25sp"
