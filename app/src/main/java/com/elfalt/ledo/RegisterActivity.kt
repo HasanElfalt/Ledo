@@ -1,8 +1,10 @@
 package com.elfalt.ledo
 
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
@@ -22,6 +24,8 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var usernameRegister : TextInputLayout
     lateinit var passwordRegister : TextInputLayout
 
+    lateinit var progressdialog: ProgressDialog
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -30,12 +34,13 @@ class RegisterActivity : AppCompatActivity() {
             finish()
         }
         mAuth = FirebaseAuth.getInstance()
-
         mDatabase = FirebaseDatabase.getInstance().getReference("Usernames")
 
         emailRegister = findViewById(R.id.Email)
         usernameRegister = findViewById(R.id.UsernameRegister)
         passwordRegister = findViewById(R.id.PasswordRegister)
+
+        progressdialog = ProgressDialog(this)
 
         Registerbtn.setOnClickListener {
 
@@ -70,18 +75,29 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
     private fun registerUser (email:String, username:String, password:String) {
+
+        progressdialog.setMessage("Loading")
+        progressdialog.show()
+
+
         mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(OnCompleteListener { task ->
 
             if (task.isSuccessful) {
-               val user = mAuth.currentUser
-                val uid = user!!.uid
+                val user = mAuth.currentUser
+                user!!.sendEmailVerification()
+                   .addOnCompleteListener(OnCompleteListener {
+                        if (task.isSuccessful) {
+                            startActivity(Intent(this, LoginScreenActivity::class.java))
+                            finish()
+                        }
+                    })
+                val uid = user.uid
                 mDatabase.child(uid).child("Username").setValue(username)
-                startActivity(Intent(this, LoginScreenActivity::class.java))
-                Toast.makeText(this, "Successfully Registered :)", Toast.LENGTH_LONG).show()
-                finish()
+
+
             }else {
-                Toast.makeText(this, "Error Registering, try again", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Error Registering, try again", Toast.LENGTH_SHORT).show()
             }
         })
 

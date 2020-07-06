@@ -1,5 +1,6 @@
 package com.elfalt.ledo
 
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,7 @@ import com.elfalt.ledo.ui.MainActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login_screen.*
@@ -18,19 +20,34 @@ import kotlinx.android.synthetic.main.activity_register.*
 class LoginScreenActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
     lateinit var mDatabase: DatabaseReference
+
     lateinit var emailLogin: TextInputLayout
     lateinit var passwordLogin: TextInputLayout
+
+    lateinit var progressdialog: ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_screen)
 
-        mAuth = FirebaseAuth.getInstance()
+        forgot_password_txt.setOnClickListener {
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
 
+        Registertxt.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        mAuth = FirebaseAuth.getInstance()
         mDatabase = FirebaseDatabase.getInstance().getReference("Usernames")
 
         emailLogin = findViewById(R.id.Email_login)
         passwordLogin = findViewById(R.id.Password)
+
+        progressdialog = ProgressDialog(this)
 
         loginbtn.setOnClickListener {
 
@@ -59,19 +76,44 @@ class LoginScreenActivity : AppCompatActivity() {
     }
 
 
-    private fun loginUser(email:String,password:String)
-    {
+    private fun loginUser(email:String,password:String) {
+
+        progressdialog.setMessage("Loading")
+        progressdialog.show()
+
+
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(OnCompleteListener {task->
                     if (task.isSuccessful) {
-                        startActivity(Intent(this, HomeScreenActivity::class.java))
-                        Toast.makeText(this, "Successfully Log in", Toast.LENGTH_LONG).show()
-                        finish()
+                        Toast.makeText(this, "Successfully log in", Toast.LENGTH_SHORT).show()
+                        val user =mAuth.currentUser
+                        updateUI(user)
                     }else {
-                        Toast.makeText(this, "Error Log in, try again", Toast.LENGTH_LONG).show()
+                        updateUI(null)
                     }
             })
 
     }
 
+    public override fun onStart() {
+        super.onStart()
+
+        val currentUser = mAuth.currentUser
+        updateUI(currentUser)
+    }
+
+
+    fun updateUI(currentUsers: FirebaseUser?) {
+
+        if (currentUsers!=null){
+            if (currentUsers.isEmailVerified) {
+                startActivity(Intent(this, HomeScreenActivity::class.java))
+                finish()
+            }else{
+                Toast.makeText(this, "Please verify your email address", Toast.LENGTH_SHORT).show()
+            }
+        }else{
+            Toast.makeText(this, "Login failed.", Toast.LENGTH_SHORT).show()
+        }
+    }
 }
