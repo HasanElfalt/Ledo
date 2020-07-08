@@ -10,7 +10,6 @@ import com.elfalt.ledo.R
 import com.google.android.youtube.player.YouTubeBaseActivity
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
-import kotlinx.android.synthetic.main.activity_journey.*
 import kotlinx.android.synthetic.main.activity_journey_lesson.*
 
 class JourneyLessonActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener,

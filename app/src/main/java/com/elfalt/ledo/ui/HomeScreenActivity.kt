@@ -66,5 +66,10 @@ class HomeScreenActivity : AppCompatActivity() {
         transaction.commit()
 
     }
-
+    override fun onBackPressed() {
+        super.onBackPressed()
+        if(supportFragmentManager.backStackEntryCount == 0){
+            super.onBackPressed()
+        }
+    }
 }

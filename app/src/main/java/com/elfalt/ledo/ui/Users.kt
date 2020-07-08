@@ -2,15 +2,10 @@ package com.elfalt.ledo.ui
 
 import android.os.Bundle
 import android.view.*
-import android.view.View.inflate
-import android.widget.ImageButton
 import android.widget.PopupMenu
-import android.widget.TextView
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.elfalt.ledo.R
-import kotlinx.android.synthetic.main.control_app_bar.*
 import kotlinx.android.synthetic.main.control_app_bar.view.*
 import kotlinx.android.synthetic.main.fragment_user_profile.view.*
 
