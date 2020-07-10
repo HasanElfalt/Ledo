@@ -17,12 +17,13 @@ import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var mAuth: FirebaseAuth
-    lateinit var mDatabase: DatabaseReference
+    private lateinit var mAuth : FirebaseAuth
+    lateinit var mDatabase     : DatabaseReference
 
     lateinit var emailRegister    : TextInputLayout
     lateinit var usernameRegister : TextInputLayout
     lateinit var passwordRegister : TextInputLayout
+    lateinit var confirmPassword  : TextInputLayout
 
     lateinit var progressdialog: ProgressDialog
 
@@ -39,6 +40,7 @@ class RegisterActivity : AppCompatActivity() {
         emailRegister = findViewById(R.id.Email)
         usernameRegister = findViewById(R.id.UsernameRegister)
         passwordRegister = findViewById(R.id.PasswordRegister)
+        confirmPassword = findViewById(R.id.ConfirmPasswordRegister)
 
         progressdialog = ProgressDialog(this)
 
@@ -47,6 +49,7 @@ class RegisterActivity : AppCompatActivity() {
             val emailregister = emailRegister.editText?.text.toString().trim()
             val usernameregister = usernameRegister.editText?.text.toString().trim()
             val passwordregister = passwordRegister.editText?.text.toString().trim()
+            val confirmpassword = confirmPassword.editText?.text.toString().trim()
 
             if (emailregister.isEmpty() ) {
                 emailRegister.error="Field can not be Empty"
@@ -69,6 +72,16 @@ class RegisterActivity : AppCompatActivity() {
             }else{
 
                 passwordRegister.isErrorEnabled=false
+            }
+            if(confirmpassword.isEmpty()) {
+                confirmPassword.error="Field can not be Empty"
+                return@setOnClickListener
+            }
+            if(passwordregister.equals(confirmpassword))
+            {
+
+            }else{
+                Toast.makeText(this, "Password not correct", Toast.LENGTH_SHORT).show()
             }
 
                 registerUser(emailregister,usernameregister,passwordregister)
