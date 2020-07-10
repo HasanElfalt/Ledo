@@ -83,7 +83,9 @@ class RegisterActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(this, "Password not correct", Toast.LENGTH_SHORT).show()
             }
-
+            if (passwordregister.length < 6) {
+                Toast.makeText(this,"Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show()
+            }
                 registerUser(emailregister,usernameregister,passwordregister)
         }
     }
