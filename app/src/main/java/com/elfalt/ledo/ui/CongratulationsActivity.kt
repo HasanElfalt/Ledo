@@ -14,15 +14,35 @@ class CongratulationsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_congratulation)
-        val lesson = intent.getStringExtra("lesson")
+        var lesson = intent.getStringExtra("lesson")
         val courseName = intent.getStringExtra("courseName")
 
         val sharedPrefEdit = getSharedPreferences("settings", Context.MODE_PRIVATE).edit()
 
         when(courseName) {
-            "Self Awareness"    -> sharedPrefEdit.putString("lessonSelf", lesson)
-            "Mind Mapping"      -> sharedPrefEdit.putString("lessonMind", lesson)
-            "Personal Branding" -> sharedPrefEdit.putString("lessonPersonal", lesson)
+            "Self Awareness"    -> {
+                val temp = getSharedPreferences("settings",Context.MODE_PRIVATE).getString("lessonSelf",lesson)!!
+                if(lesson > temp)
+                    sharedPrefEdit.putString("lessonSelf", lesson)
+                else
+                    lesson = temp
+
+            }
+            "Mind Mapping"      -> {
+                val temp = getSharedPreferences("settings",Context.MODE_PRIVATE).getString("lessonMind",lesson)!!
+                if(lesson > temp)
+                    sharedPrefEdit.putString("lessonMind", lesson)
+                else
+                    lesson = temp
+
+            }
+            "Personal Branding" -> {
+                val temp = getSharedPreferences("settings",Context.MODE_PRIVATE).getString("lessonPersonal",lesson)!!
+                if(lesson > temp)
+                    sharedPrefEdit.putString("lessonPersonal", lesson)
+                else
+                    lesson = temp
+            }
         }
 
         if(courseName == "Self Awareness" && lesson == "Lesson 4"){
