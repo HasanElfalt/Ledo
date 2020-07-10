@@ -9,11 +9,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="start">Start</string>
     <string name="submit">Submit</string>
-
+    <string name="confirm_password">Confirm Password</string>
     <string name="leader_board">Leaderboard</string>
     <string name="self_awareness">Self-awareness</string>
     <string name="mind_mapping">Mind-Mapping</string>
     <string name="personal_branding">Personal-Branding</string>
+    <string name="setting">Setting</string>
     <string name="log_out">Log out</string>
     <string name="cancel">Cancel</string>
     <string name="register">Register</string>
