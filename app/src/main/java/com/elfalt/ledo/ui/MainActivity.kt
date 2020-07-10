@@ -23,11 +23,9 @@ class MainActivity : AppCompatActivity() {
         getStarted.setOnClickListener {
             val intent = Intent(this, LoginScreenActivity::class.java)
             startActivity(intent)
-            finish()
         }
     }
 
-
-    }
+}
 
 

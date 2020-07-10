@@ -111,6 +111,7 @@ class RegisterActivity : AppCompatActivity() {
 
 
             }else {
+                progressdialog.hide()
                 Toast.makeText(this, "Error Registering, try again", Toast.LENGTH_SHORT).show()
             }
         })

@@ -36,7 +36,6 @@ class LoginScreenActivity : AppCompatActivity() {
         Registertxt.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-            finish()
         }
 
         mAuth = FirebaseAuth.getInstance()
@@ -101,7 +100,7 @@ class LoginScreenActivity : AppCompatActivity() {
     }
 
 
-    fun updateUI(currentUsers: FirebaseUser?) {
+    private fun updateUI(currentUsers: FirebaseUser?) {
 
         if (currentUsers!=null){
             if (currentUsers.isEmailVerified) {
@@ -111,6 +110,7 @@ class LoginScreenActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please verify your email address", Toast.LENGTH_SHORT).show()
             }
         }else{
+            progressdialog.hide()
             Toast.makeText(this, "Login failed.", Toast.LENGTH_SHORT).show()
         }
     }
