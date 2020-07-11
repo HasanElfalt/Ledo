@@ -234,21 +234,23 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginEnd="30dp"
-                android:text="Yourself Journey"
+                android:text="@string/yourself_journey"
                 android:textColor="#1f314a"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:paddingBottom="30dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginEnd="70dp"
-                android:text="30%"
+                android:id="@+id/progress_percentage"
+                tools:text="30%"
                 android:textColor="#22d0c4"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
+<!--
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -259,7 +261,7 @@
                 android:textColor="#1f314a"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
+-->
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -273,7 +275,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
-                android:src="@mipmap/icon_4" />
+                android:src="@mipmap/icon_4"
+                />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="25dp"

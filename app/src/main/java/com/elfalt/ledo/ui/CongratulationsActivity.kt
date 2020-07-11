@@ -22,7 +22,7 @@ class CongratulationsActivity : AppCompatActivity() {
         when(courseName) {
             "Self Awareness"    -> {
                 val temp = getSharedPreferences("settings",Context.MODE_PRIVATE).getString("lessonSelf",lesson)!!
-                if(lesson > temp)
+                if(lesson >= temp)
                     sharedPrefEdit.putString("lessonSelf", lesson)
                 else
                     lesson = temp
@@ -30,7 +30,7 @@ class CongratulationsActivity : AppCompatActivity() {
             }
             "Mind Mapping"      -> {
                 val temp = getSharedPreferences("settings",Context.MODE_PRIVATE).getString("lessonMind",lesson)!!
-                if(lesson > temp)
+                if(lesson >= temp)
                     sharedPrefEdit.putString("lessonMind", lesson)
                 else
                     lesson = temp
@@ -38,7 +38,7 @@ class CongratulationsActivity : AppCompatActivity() {
             }
             "Personal Branding" -> {
                 val temp = getSharedPreferences("settings",Context.MODE_PRIVATE).getString("lessonPersonal",lesson)!!
-                if(lesson > temp)
+                if(lesson >= temp)
                     sharedPrefEdit.putString("lessonPersonal", lesson)
                 else
                     lesson = temp
